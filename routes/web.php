@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/beranda', 'berandaController@beranda')->name('beranda');
+//area
+Route::get('area', 'areaController@index')->name('area');
+Route::get('area/create', 'areaController@create')->name('createArea');
+Route::post('area/store', 'areaController@store')->name('storeArea');
