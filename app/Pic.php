@@ -8,4 +8,5 @@ class Pic extends Model
 {
     public $table = "pics";
     protected $fillable = ['nid', 'nama', 'password', 'bidang', 'fungsi', 'level'];
+    protected $primaryKey = 'pic_id';
 }

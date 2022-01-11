@@ -4,11 +4,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">DATA AREA</h1>
+                    <h1 class="h3 mb-2 text-gray-800">DATA  ASSET</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <a href="{{ route('createArea') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                        <a href="{{ route('createPic') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -16,18 +16,22 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Area</th>
+                                            <th>Area</th>
+                                            <th>RBDID</th>
+                                            <th>Equipment</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($area as $key => $data)
+                                        @foreach($asset as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->nama }}</td>
+                                            <td>{{ $data->area->nama }}</td>
+                                            <td>{{ $data->rbdid }}</td>
+                                            <td>{{ $data->equipment }}</td>
                                             <td>
-                                                <a href="{{ route('editArea', $data->area_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href="{{ route('deleteArea', $data->area_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                                {{-- <a href="{{ route('editAsset', $data->asset_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                <a href="{{ route('deleteAsset', $data->asset_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a> --}}
                                               </td>
                                         </tr>
                                         @endforeach

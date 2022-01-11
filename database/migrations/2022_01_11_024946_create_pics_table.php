@@ -14,13 +14,14 @@ class CreatePicsTable extends Migration
     public function up()
     {
         Schema::create('pics', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('pic_id');
             $table->text('nid', 20);
             $table->text('nama');
             $table->text('password');
             $table->text('bidang');
             $table->text('fungsi');
             $table->text('level');
+            $table->timestamps();
         });
     }
 
