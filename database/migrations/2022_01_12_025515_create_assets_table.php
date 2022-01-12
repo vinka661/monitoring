@@ -14,12 +14,12 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::create('assets', function (Blueprint $table) {
-            $table->increments('asset_id');
+            $table->string('asset_id');
             $table->text('rbdid');
             $table->text('equipment');
-            $table->unsignedInteger('area_id');
+            $table->unsignedInteger('id_area');
             $table->timestamps();
-            $table->foreign('area_id')->references('area_id')->on('areas');
+            $table->foreign('id_area')->references('area_id')->on('areas');
         });
     }
 

@@ -8,7 +8,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <br>
-            <h2 class="m-0 text-dark"><strong>Tambah Asset Baru</strong></h2></br>
+            <h2 class="m-0 text-dark"><strong>Tambah RCFA Baru</strong></h2></br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -21,11 +21,11 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeAsset') }}" method="POST">
+              <form role="form" action="{{ route('storeRcfa') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="asset_id"><strong>Asset ID<strong></label><br>
+                    <label for="asset_id"><strong>Asset Number<strong></label><br>
                     <input type="text" class="form-control" id="asset_id" name="asset_id" placeholder="Masukkan Asset ID" required>
                   </div>
                   <div class="form-group">

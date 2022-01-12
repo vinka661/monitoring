@@ -49,8 +49,15 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route ('asset')}}">
                 <i class="fas fa-wrench"></i>
-                <span>Asset</span></a>
-        </li>
+                <span>Asset</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route ('rcfa')}}">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>RCFA</span>
+        </a>
+    </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
