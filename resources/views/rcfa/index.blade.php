@@ -17,7 +17,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Asset Number</th>
-                                            <th>Keterangan</th>
+                                            <th>Judul</th>
                                             <th>Tanggal</th>
                                             <th>Input</th>
                                             <th>Failure Mode</th>
@@ -29,15 +29,15 @@
                                         @foreach($rcfa as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->asset->asset_id }}</td>
+                                            <td>{{ $data->aset->asset_id }}</td>
                                             <td>{{ $data->keterangan }}</td>
                                             <td>{{ $data->tanggal }}</td>
                                             <td>{{ $data->input }}</td>
                                             <td>{{ $data->failure_mode }}</td>
                                             <td>{{ $data->evaluasi_rekom }}</td>
                                             <td>
-                                                <a href=""><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href=""><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                                <a href="{{ route('editRcfa', $data->rcfa_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
                                                 <a href=""><button  class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Beri FDT</button></a>
                                               </td>
                                         </tr>

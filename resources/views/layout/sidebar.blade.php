@@ -47,7 +47,7 @@
         DATA MONITORING
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{route ('asset')}}">
+        <a class="nav-link" href="{{route ('aset')}}">
                 <i class="fas fa-wrench"></i>
                 <span>Asset</span>
         </a>

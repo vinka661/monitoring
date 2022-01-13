@@ -25,30 +25,43 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="asset_id"><strong>Asset Number<strong></label><br>
-                    <input type="text" class="form-control" id="asset_id" name="asset_id" placeholder="Masukkan Asset ID" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="area"><strong>Area</strong></label>
-                    <select class="form-control select2bs4" name="area" id="area" style="width: 100%;" required><br>
-                      @foreach ($area as $item)
-                        <option value="{{ $item->area_id }}">{{ $item->nama }}</option>
+                    <label for="aset"><strong>Aset Number</strong></label>
+                    <select class="form-control select2bs4" name="aset" id="aset" style="width: 100%;" required><br>
+                      @foreach ($aset as $item)
+                        <option value="{{ $item->asset_id }}">{{ $item->asset_id }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="rbdid"><strong>RBDID<strong></label><br>
-                    <input type="text" class="form-control" id="rbdid" name="rbdid" placeholder="Masukkan RBDID" required>
+                    <label for="keterangan"><strong>Judul<strong></label><br>
+                    <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Masukkan Keterangan" required>
                   </div>
                   <div class="form-group">
-                    <label for="equipment"><strong>Equipment<strong></label><br>
-                    <input type="text" class="form-control" id="equipment" name="equipment" placeholder="Masukkan Equipment" required>
+                    <label for="tanggal"><strong>Tanggal<strong></label><br>
+                      <input type="date" class="form-control" required="required" name="tanggal" id="datepicker" placeholder="Masukkan Tanggal Sewa">
+                  </div>
+                  <div class="form-group">
+                    <label for="inp"><strong>Input<strong></label><br>
+                    <select class="form-control select2bs4" name="inp" id="inp" style="width: 100%;" required>
+                      <option value="PLO">PLO</option>
+                      <option value="OEE">OEE</option>
+                      <option value="ECP">ECP</option>
+                      <option value="Chronic Problem">Chronic Problem</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="failure_mode"><strong>Failure Mode<strong></label><br>
+                    <input type="text" class="form-control" id="failure_mode" name="failure_mode" placeholder="Masukkan Failure Mode" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi<strong></label><br>
+                    <input type="text" class="form-control" id="evaluasi_rekom" name="evaluasi_rekom" placeholder="Masukkan Evaluasi Rekomendasi" required>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('asset') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('rcfa') }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>
@@ -59,4 +72,17 @@
       </div>
 </div>
 </div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript">
+$(function() {
+    $( "#datepicker" ).datepicker({
+        format: "y-m-d"
+    });
+});
+  </script>
 @endsection

@@ -21,12 +21,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeAsset') }}" method="POST">
+              <form role="form" action="{{ route('storeAset') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="asset_id"><strong>Asset ID<strong></label><br>
-                    <input type="text" class="form-control" id="asset_id" name="asset_id" placeholder="Masukkan Asset ID" required>
+                    <label for="aset_id"><strong>Asset ID<strong></label><br>
+                    <input type="text" class="form-control" id="aset_id" name="aset_id" placeholder="Masukkan Asset ID" required>
                   </div>
                   <div class="form-group">
                     <label for="area"><strong>Area</strong></label>
@@ -48,7 +48,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('asset') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('aset') }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

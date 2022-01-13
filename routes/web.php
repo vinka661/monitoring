@@ -32,13 +32,17 @@ Route::post('pic/update/{pic_id}', 'picController@update')->name('updatePic');
 Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
 
 //asset
-Route::get('asset', 'assetController@index')->name('asset');
-Route::get('asset/create', 'assetController@create')->name('createAsset');
-Route::post('asset/store', 'assetController@store')->name('storeAsset');
-Route::get('asset/edit/{asset_id}', 'assetController@edit')->name('editAsset');
-Route::post('asset/update/{asset_id}', 'assetController@update')->name('updateAsset');
-Route::get('asset/delete/{asset_id}', 'assetController@destroy')->name('deleteAsset');
+Route::get('aset', 'asetController@index')->name('aset');
+Route::get('aset/create', 'asetController@create')->name('createAset');
+Route::post('aset/store', 'asetController@store')->name('storeAset');
+Route::get('aset/edit/{aset_id}', 'asetController@edit')->name('editAset');
+Route::post('aset/update/{aset_id}', 'asetController@update')->name('updateAset');
+Route::get('aset/delete/{aset_id}', 'asetController@destroy')->name('deleteAset');
 
 //rcfa
 Route::get('rcfa', 'rcfaController@index')->name('rcfa');
-Route::get('asset/create', 'rcfaController@create')->name('createRcfa');
+Route::get('rcfa/create', 'rcfaController@create')->name('createRcfa');
+Route::post('rcfa/store', 'rcfaController@store')->name('storeRcfa');
+Route::get('rcfa/edit/{rcfa_id}', 'rcfaController@edit')->name('editRcfa');
+Route::post('rcfa/update/{rcfa_id}', 'rcfaController@update')->name('updateRcfa');
+Route::get('rcfa/delete/{rcfa_id}', 'rcfaController@destroy')->name('deleteRcfa');

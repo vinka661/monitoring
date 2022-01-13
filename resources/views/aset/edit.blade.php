@@ -21,35 +21,35 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-                <form role="form" action="{{ route('updateAsset', $asset->asset_id) }}" method="POST">
+                <form role="form" action="{{ route('updateAset', $aset->asset_id) }}" method="POST">
                     @csrf
                     <div class="card-body">
                       <div class="form-group">
-                        <label for="asset_id"><strong>Asset ID<strong></label><br>
-                        <input type="text" class="form-control" id="asset_id" name="asset_id" value="{{ $asset->asset_id }}">
+                        <label for="aset_id"><strong>Asset ID<strong></label><br>
+                        <input type="text" class="form-control" id="aset_id" name="aset_id" value="{{ $aset->asset_id }}">
                       </div>
                         <div class="form-group">
                             <label for="area"><strong>Area</strong></label>
                             <select class="form-control select2bs4" name="area" id="area" style="width: 100%;">
                               @foreach ($area as $item)
-                                <option value="{{ $item->area_id }}" {{ $asset->id_area == $item->area_id ? 'selected' : '' }}>{{ $item->nama }}</option>
+                                <option value="{{ $item->area_id }}" {{ $aset->id_area == $item->area_id ? 'selected' : '' }}>{{ $item->nama }}</option>
                               @endforeach
                             </select>
                           </div>
                       <div class="form-group">
                         <label for="rbdid"><strong>RBDID</strong></label><br>
-                        <input type="text" class="form-control" id="rbdid" name="rbdid" value="{{ $asset->rbdid }}">
+                        <input type="text" class="form-control" id="rbdid" name="rbdid" value="{{ $aset->rbdid }}">
                       </div>
                       <div class="form-group">
                         <label for="equipment"><strong>Equipment</strong></label></br>
-                        <input type="text" class="form-control" id="equipment" name="equipment" value="{{ $asset->equipment }}">
+                        <input type="text" class="form-control" id="equipment" name="equipment" value="{{ $aset->equipment }}">
                       </div>
                     </div>
                     <!-- /.card-body -->
     
                     <div class="card-footer">
                       <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                      <a href="{{ route('asset') }}" class="btn btn-default">Cancel</a>
+                      <a href="{{ route('aset') }}" class="btn btn-default">Cancel</a>
                     </div>
                   </form>
             </div>
