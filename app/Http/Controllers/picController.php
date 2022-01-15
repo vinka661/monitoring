@@ -12,6 +12,11 @@ class picController extends Controller
         return view('pic.index', ['pic' => $pic]);
     }
 
+    // public function create()
+    // {
+    //     return view('pic.create');
+    // }
+
     public function create()
     {
         return view('pic.create');

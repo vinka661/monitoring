@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeFdt') }}" method="POST">
+              <form role="form" action="{{ route('storeFdt') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   {{-- <div class="form-group">
@@ -53,8 +53,11 @@
                     <input type="text" class="form-control" id="nama_fdt" name="nama_fdt" placeholder="Masukkan Nama Fdt" required>
                   </div>
                   <div class="form-group">
-                    <label for="jangka"><strong>jangka<strong></label><br>
-                    <input type="text" class="form-control" id="jangka" name="jangka" placeholder="Masukkan jangka" required>
+                    <label for="jangka"><strong>Jangka<strong></label><br>
+                    <select class="form-control select2bs4" name="jangka" id="jangka" style="width: 100%;" required></br>
+                      <option value="Jangka Panjang">Jangka Panjang</option>
+                      <option value="Jangka Pendek">Jangka Pendek</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="target"><strong>Target<strong></label><br>
@@ -72,7 +75,7 @@
                     <label for="rkap_rjpu"><strong>RKAP/RJPU<strong></label><br>
                     <input type="text" class="form-control" id="rkap_rjpu" name="rkap_rjpu" placeholder="Masukkan RKAP/RJPU" required>
                   </div>
-                  <div>
+                  <div class="form-group">
                     <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
                     <input type="file" class="form-control" required="required" name="upload_kajian"></br> 
                   </div>

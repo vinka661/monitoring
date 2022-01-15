@@ -14,7 +14,8 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::create('assets', function (Blueprint $table) {
-            $table->string('asset_id');
+            $table->engine = 'InnoDB';
+            $table->string('asset_id')->primary();
             $table->text('rbdid');
             $table->text('equipment');
             $table->unsignedInteger('id_area');

@@ -17,7 +17,6 @@ class areaController extends Controller
         $area = Area::all();
         return view('area.index', ['area' => $area]);
     }
-
     public function create()
     {
         return view('area.create');
