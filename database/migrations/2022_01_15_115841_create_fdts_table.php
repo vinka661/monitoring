@@ -22,7 +22,6 @@ class CreateFdtsTable extends Migration
             $table->text('no_wo');
             $table->date('actual_finish');
             $table->text('rkap_rjpu');
-            $table->string('upload_kajian');
             $table->unsignedInteger('id_rcfa');
             $table->timestamps();
             $table->foreign('id_rcfa')->references('rcfa_id')->on('rcfas');
