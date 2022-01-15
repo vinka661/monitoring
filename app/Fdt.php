@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Fdt extends Model
 {
     public $table = "fdts";
-    protected $fillable = ['root_couse', 'nama_fdt', 'jangka_panjang', 'target','no_wo','actual_finish','rkap_rjpu','upload_kajian','id_rcfa'];
+    protected $fillable = ['root_cause', 'nama_fdt', 'jangka', 'target','no_wo','actual_finish','rkap_rjpu','upload_kajian','id_rcfa'];
     protected $primaryKey = 'fdt_id';
 
     public function Rcfa()

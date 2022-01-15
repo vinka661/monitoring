@@ -58,6 +58,18 @@
                 <span>RCFA</span>
         </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route ('fdt')}}">
+                <i class="fas fa-check-circle"></i>
+                <span>FDT</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route ('fdt')}}">
+                <i class="fas fa-spinner"></i>
+                <span>Progres</span>
+        </a>
+    </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">

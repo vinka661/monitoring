@@ -46,3 +46,11 @@ Route::post('rcfa/store', 'rcfaController@store')->name('storeRcfa');
 Route::get('rcfa/edit/{rcfa_id}', 'rcfaController@edit')->name('editRcfa');
 Route::post('rcfa/update/{rcfa_id}', 'rcfaController@update')->name('updateRcfa');
 Route::get('rcfa/delete/{rcfa_id}', 'rcfaController@destroy')->name('deleteRcfa');
+
+//fdt
+Route::get('fdt', 'fdtController@index')->name('fdt');
+Route::get('fdt/create', 'fdtController@create')->name('createFdt');
+Route::post('fdt/store', 'fdtController@store')->name('storeFdt');
+Route::get('fdt/edit/{fdt_id}', 'fdtController@edit')->name('editFdt');
+Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
+Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');

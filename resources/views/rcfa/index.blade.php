@@ -38,7 +38,7 @@
                                             <td>
                                                 <a href="{{ route('editRcfa', $data->rcfa_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
-                                                <a href=""><button  class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Beri FDT</button></a>
+                                                <a href="{{ route('createFdt') }}"><button  class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Beri FDT</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

@@ -15,13 +15,14 @@ class CreateFdtsTable extends Migration
     {
         Schema::create('fdts', function (Blueprint $table) {
             $table->increments('fdt_id');
-            $table->text('root_couse');
+            $table->text('root_cause');
             $table->text('nama_fdt');
             $table->text('jangka');
             $table->date('target');
             $table->text('no_wo');
             $table->date('actual_finish');
-            $table->date('rkap_rjpu');
+            $table->text('rkap_rjpu');
+            $table->string('upload_kajian');
             $table->unsignedInteger('id_rcfa');
             $table->timestamps();
             $table->foreign('id_rcfa')->references('rcfa_id')->on('rcfas');
