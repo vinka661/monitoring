@@ -2,14 +2,15 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+        {{-- <div class="sidebar-brand-icon rotate-n-15"> --}}
+        <div class="sidebar-brand-icon ">
+            <i class="fas fa-laptop"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Monitoring FDT RCFA</div>
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+ 
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
@@ -19,12 +20,19 @@
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
         Data Master
-    </div>
+    </div> --}}
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="#">  
+            <span>DATA MASTER</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Pages Collapse Menu -->
     <!-- Nav Item - Charts -->
@@ -40,12 +48,20 @@
     
 
     <!-- Divider -->
-    <hr class="sidebar-divider">
+    {{-- <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
         DATA MONITORING
-    </div>
+    </div> --}}
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="#">  
+            <span>DATA MONITORING</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+
     <li class="nav-item">
         <a class="nav-link" href="{{route ('aset')}}">
                 <i class="fas fa-wrench"></i>
@@ -149,10 +165,10 @@
     </div>
 
     <!-- Sidebar Message -->
-    <div class="sidebar-card d-none d-lg-flex">
+    {{-- <div class="sidebar-card d-none d-lg-flex">
         <img class="sidebar-card-illustration mb-2" src="../../img/undraw_rocket.svg" alt="...">
         <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-    </div>
+    </div> --}}
 
 </ul>

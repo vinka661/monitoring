@@ -11,6 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --blue:#338A94;
   --blue: #4e73df;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -159,13 +160,13 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #018591;
   text-decoration: none;
-  background-color: transparent;
+  background-color: #2391a7;
 }
 
 a:hover {
-  color: #224abe;
+  color: #338A94;
   text-decoration: underline;
 }
 
@@ -4077,7 +4078,8 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #4e73df;
+  background-color:#018591;
+
 }
 
 .nav-fill > .nav-link,
@@ -4762,7 +4764,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #4e73df;
+  color:#018591;
   background-color: #fff;
   border: 1px solid #dddfeb;
 }
@@ -4795,8 +4797,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #018591;
+  border-color: #018591;
 }
 
 .page-item.disabled .page-link {
@@ -4879,7 +4881,7 @@ a.badge:hover, a.badge:focus {
 
 .badge-primary {
   color: #fff;
-  background-color: #4e73df;
+  background-color: #018591;
 }
 
 a.badge-primary:hover, a.badge-primary:focus {
@@ -5193,7 +5195,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #4e73df;
+  background-color: #018591;
   transition: width 0.6s ease;
 }
 
@@ -5282,8 +5284,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #018591;
+  border-color: #018591;
 }
 
 .list-group-item + .list-group-item {
@@ -6411,7 +6413,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #4e73df !important;
+  background-color: #018591!important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6539,7 +6541,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #4e73df !important;
+  border-color: #018591 !important;
 }
 
 .border-secondary {
@@ -9900,7 +9902,7 @@ a:focus {
 }
 
 .bg-gradient-primary {
-  background-color: #4e73df;
+  background-color:#2E99A5;
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
 }
@@ -10406,7 +10408,7 @@ a:focus {
 
 .sidebar .nav-item .collapse .collapse-inner .collapse-item.active,
 .sidebar .nav-item .collapsing .collapse-inner .collapse-item.active {
-  color: #4e73df;
+  color: #018591;
   font-weight: 700;
 }
 
@@ -10634,7 +10636,7 @@ a:focus {
 }
 
 .sidebar-light .sidebar-heading {
-  color: #b7b9cc;
+  color: #338A94;
 }
 
 .sidebar-light .nav-item .nav-link {
