@@ -54,3 +54,8 @@ Route::post('fdt/store', 'fdtController@store')->name('storeFdt');
 Route::get('fdt/edit/{fdt_id}', 'fdtController@edit')->name('editFdt');
 Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
 Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');
+
+//Progres
+Route::get('progres', 'progresController@index')->name('progres');
+Route::get('progres/create', 'progresController@create')->name('createProgres');
+Route::post('progres/store', 'progresController@store')->name('storeProgres');

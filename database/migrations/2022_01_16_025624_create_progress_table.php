@@ -14,8 +14,15 @@ class CreateProgressTable extends Migration
     public function up()
     {
         Schema::create('progress', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('id_fdt')->unsigned();
+            $table->integer('id_pic')->unsigned();
+            $table->text('progres');
+            $table->date('tanggal');
+            $table->text('keterangan');
+            $table->text('upload_kajian');
             $table->timestamps();
+            $table->foreign('id_fdt')->references('fdt_id')->on('fdts')->onDelete('cascade');
+            $table->foreign('id_pic')->references('pic_id')->on('pics')->onDelete('cascade');
         });
     }
 

@@ -15,6 +15,10 @@ class Fdt extends Model
         return $this->belongsTo('App\Rcfa', 'id_rcfa');
     }
 
+    public function Progres()
+    {
+        return $this->hasMany('App\Progres');
+    }
     // public function uploadFile(Request $request,$oke)
     // {
     //         $result ='';
