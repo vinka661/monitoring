@@ -38,7 +38,7 @@
                       </div>
                       <div class="form-group">
                         <label for="password"><strong>Password</strong></label><br>
-                        <input type="text" class="form-control" id="password" name="password" value="{{ $pic->password }}">
+                        <input type="password" class="form-control" id="password" name="password" value="{{ $pic->password }}">
                       </div>
                  
                     <div class="form-group">

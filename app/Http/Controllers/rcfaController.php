@@ -28,6 +28,11 @@ class rcfaController extends Controller
             'input' => $request->inp,
             'failure_mode' => $request->failure_mode,
             'evaluasi_rekom' => $request->evaluasi_rekom,
+            'berulang_1_bln' => $request->berulang_1_bln,
+            'berulang_3_bln' => $request->berulang_3_bln,
+            'berulang_6_bln' => $request->berulang_6_bln,
+            'berulang_1_th' => $request->berulang_1_th,
+            'berulang_3_th' => $request->berulang_3_th,
         ]);
         return redirect('rcfa');
     }
@@ -49,6 +54,11 @@ class rcfaController extends Controller
         $rcfa->input = $request->inp;
         $rcfa->failure_mode = $request->failure_mode;
         $rcfa->evaluasi_rekom = $request->evaluasi_rekom;
+        $rcfa->berulang_1_bln = $request->berulang_1_bln;
+        $rcfa->berulang_3_bln = $request->berulang_3_bln;
+        $rcfa->berulang_6_bln = $request->berulang_6_bln;
+        $rcfa->berulang_1_th = $request->berulang_1_th;
+        $rcfa->berulang_3_th = $request->berulang_3_th;
         $rcfa->save();
         return redirect('rcfa');
     }

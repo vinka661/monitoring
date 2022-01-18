@@ -19,9 +19,9 @@
                                             <th>NID</th>
                                             <th>Nama</th>
                                             <th>Password</th>
-                                            <th>bidang</th>
-                                            <th>fungsi</th>
-                                            <th>level</th>
+                                            <th>Bidang</th>
+                                            <th>Fungsi</th>
+                                            <th>Level</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>

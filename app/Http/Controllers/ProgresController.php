@@ -15,27 +15,49 @@ class ProgresController extends Controller
     }
     public function create()
     {
-        $progres = Progres::all();
+        //$progres = Progres::all();
         $fdt = Fdt::all();
         $pic = Pic::all();
         // $rcfa = Rcfa::find($rcfa_id);
         // $aset = Asset::all();
-        return view('progres.create', ['progres' => $progres]);
+        return view('progres.create', ['fdt' => $fdt, 'pic' => $pic]);
     }
 
     public function store(Request $request)
     {
-        if($request->file('upload_kajian')){ 
-			$upload_kajian = $request->file('upload_kajian')->store('files','public');
-        }
         Progres::create([
-            'id_fdt' => $request->id_fdt,
-            'id_pic' => $request->id_pic,
-            'progres' => $request->progres,
+            'id_fdt' => $request->fdt,
+            'id_pic' => $request->pic,
             'tanggal' => $request->tanggal,
             'keterangan' => $request->keterangan,
-            'upload_kajian' => $upload_kajian,
         ]);
+        return redirect('progres');
+    }
+
+    public function edit($id_fdt)
+    {
+        $progres = Progres::all();
+        $fdt = Fdt::find($id_fdt);
+        $pic = Pic::all();
+        return view('progres.edit',['progres' => $progres,'fdt' => $fdt, 'pic' => $pic]);
+    }
+
+    public function update(Request $request, $id_fdt)
+    {
+        $progres = progres::find($id_fdt);
+        $progres->id_fdt = $request->fdt;
+        $progres->id_pic = $request->pic;
+        $progres->tanggal = $request->tanggal;
+        $progres->keterangan = $request->keterangan;
+        
+        $progres->save();
+        return redirect('progres');
+    }
+
+    public function destroy($id)
+    {
+        $progres = progres::find($id);
+        $rcfa->delete();
         return redirect('progres');
     }
 }

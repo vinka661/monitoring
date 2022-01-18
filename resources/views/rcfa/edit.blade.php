@@ -61,6 +61,46 @@
                         <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi</strong></label></br>
                         <input type="text" class="form-control" id="evaluasi_rekom" name="evaluasi_rekom" value="{{ $rcfa->evaluasi_rekom }}">
                       </div>
+                      <div class="form-group">
+                        <label for="berulang_1_bln">Berulang 1 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="form-check form-check-inline">
+                          <label for="berulang_1_bln">
+                            <input type="radio" id="ya" name="berulang_1_bln" value="1" {{ $rcfa->berulang_1_bln == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_1_bln" value="0" {{ $rcfa->berulang_1_bln == '0' ? 'checked' : ''}}> Tidak
+                          </label>
+                      </div>
+                      <div class="form-group">
+                        <label for="berulang_3_bln">Berulang 3 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="form-check form-check-inline">
+                          <label for="berulang_3_bln">
+                            <input type="radio" id="ya" name="berulang_3_bln" value="1" {{ $rcfa->berulang_3_bln == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_3_bln" value="0" {{ $rcfa->berulang_3_bln == '0' ? 'checked' : ''}}> Tidak
+                          </label>
+                      </div>
+                      <div class="form-group">
+                        <label for="berulang_6_bln">Berulang 6 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="form-check form-check-inline">
+                          <label for="berulang_6_bln">
+                            <input type="radio" id="ya" name="berulang_6_bln" value="1" {{ $rcfa->berulang_6_bln == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_6_bln" value="0" {{ $rcfa->berulang_6_bln == '0' ? 'checked' : ''}}> Tidak
+                          </label>
+                      </div>
+                      <div class="form-group">
+                        <label for="berulang_1_th">Berulang 1 Tahun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="form-check form-check-inline">
+                          <label for="berulang_1_th">
+                            <input type="radio" id="ya" name="berulang_1_th" value="1" {{ $rcfa->berulang_1_th == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_1_th" value="0" {{ $rcfa->berulang_1_th == '0' ? 'checked' : ''}}> Tidak
+                          </label>
+                      </div>
+                      <div class="form-group">
+                        <label for="berulang_3_th">Berulang 3 Tahun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="form-check form-check-inline">
+                          <label for="berulang_3_th">
+                            <input type="radio" id="ya" name="berulang_3_th" value="1" {{ $rcfa->berulang_3_th == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_3_th" value="0" {{ $rcfa->berulang_3_th == '0' ? 'checked' : ''}}> Tidak
+                          </label>
+                      </div>
                     </div>
                     <!-- /.card-body -->
     

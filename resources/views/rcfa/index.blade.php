@@ -22,6 +22,11 @@
                                             <th>Input</th>
                                             <th>Failure Mode</th>
                                             <th>Evaluasi Rekom</th>
+                                            <th>Berulang 1 Bulan</th>
+                                            <th>Berulang 3 Bulan</th>
+                                            <th>Berulang 6 Bulan</th>
+                                            <th>Berulang 1 Tahun</th>
+                                            <th>Berulang 3 Tahun</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -35,10 +40,14 @@
                                             <td>{{ $data->input }}</td>
                                             <td>{{ $data->failure_mode }}</td>
                                             <td>{{ $data->evaluasi_rekom }}</td>
+                                            <td>{{ $data->berulang_1_bln }}</td>
+                                            <td>{{ $data->berulang_3_bln }}</td>
+                                            <td>{{ $data->berulang_6_bln }}</td>
+                                            <td>{{ $data->berulang_1_th }}</td>
+                                            <td>{{ $data->berulang_3_th }}</td>
                                             <td>
                                                 <a href="{{ route('editRcfa', $data->rcfa_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
-                                                <a href="{{ route('createFdt') }}"><button  class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Beri FDT</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

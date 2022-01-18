@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeFdt') }}" method="POST" >
+              <form role="form" action="{{ route('storeFdt') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   {{-- <div class="form-group">
@@ -75,10 +75,10 @@
                     <label for="rkap_rjpu"><strong>RKAP/RJPU<strong></label><br>
                     <input type="text" class="form-control" id="rkap_rjpu" name="rkap_rjpu" placeholder="Masukkan RKAP/RJPU" required>
                   </div>
-                  {{-- <div class="form-group">
+                  <div class="form-group">
                     <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
                     <input type="file" class="form-control" required="required" name="upload_kajian"></br> 
-                  </div> --}}
+                  </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

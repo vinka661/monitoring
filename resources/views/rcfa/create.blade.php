@@ -57,6 +57,46 @@
                     <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi<strong></label><br>
                     <input type="text" class="form-control" id="evaluasi_rekom" name="evaluasi_rekom" placeholder="Masukkan Evaluasi Rekomendasi" required>
                   </div>
+                  <div class="form-group">
+                    <label for="berulang_1_bln">Berulang 1 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <div class="form-check form-check-inline">
+                          <label for="berulang_1_bln">
+                            <input type="radio" id="ya" name="berulang_1_bln" value="1" required> Ya &nbsp;&nbsp;
+                            <input type="radio" id="tidak" name="berulang_1_bln" value="0" required>> Tidak
+                          </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="berulang_3_bln">Berulang 3 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <div class="form-check form-check-inline">
+                          <label for="berulang_3_bln">
+                            <input type="radio" id="berulang_3_bln" name="berulang_3_bln" value="1"> Ya &nbsp;&nbsp;
+                            <input type="radio" id="berulang_3_bln" name="berulang_3_bln" value="0"> Tidak
+                          </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="berulang_6_bln">Berulang 6 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <div class="form-check form-check-inline">
+                          <label for="berulang_6_bln">
+                            <input type="radio" id="berulang_6_bln" name="berulang_6_bln" value=1> Ya &nbsp;&nbsp;
+                            <input type="radio" id="berulang_6_bln" name="berulang_6_bln" value=0> Tidak
+                          </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="berulang_1_th">Berulang 1 Tahun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <div class="form-check form-check-inline">
+                          <label for="berulang_1_th">
+                            <input type="radio" id="berulang_1_th" name="berulang_1_th" value="1"> Ya &nbsp;&nbsp;
+                            <input type="radio" id="berulang_1_th" name="berulang_1_th" value="0"> Tidak
+                          </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="berulang_3_th">Berulang 3 Tahun &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                      <div class="form-check form-check-inline">
+                          <label for="berulang_3_th">
+                            <input type="radio" id="berulang_3_th" name="berulang_3_th" value="1"> Ya &nbsp;&nbsp;
+                            <input type="radio" id="berulang_3_th" name="berulang_3_th" value="0"> Tidak
+                          </label>
+                  </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

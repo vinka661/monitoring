@@ -21,29 +21,28 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              {{-- <form role="form" action="{{ route('storeRcfa') }}" method="POST"> --}}
                 <form role="form" action="{{ route('storeProgres') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="id_fdt"><strong>Nama FDT </strong></label>
-                    {{-- <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required><br>
+                    <label for="fdt"><strong>Nama FDT </strong></label>
+                      <select class="form-control select2bs4" name="fdt" id="fdt" style="width: 100%;" required><br>
                       @foreach ($fdt as $item)
                         <option value="{{ $item->fdt_id }}">{{ $item->nama_fdt}}</option>
                       @endforeach
-                    </select> --}}
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="id_pic"><strong>Nama PIC</strong></label>
-                    {{-- <select class="form-control select2bs4" name="id_pic" id="id_pic" style="width: 100%;" required><br>
+                    <label for="pic"><strong>Nama PIC</strong></label>
+                    <select class="form-control select2bs4" name="pic" id="pic" style="width: 100%;" required><br>
                       @foreach ($pic as $item)
                         <option value="{{ $item->pic_id }}">{{ $item->nama }}</option>
                       @endforeach
-                    </select> --}}
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="progres"><strong>Progres<strong></label><br>
-                    <select class="form-control select2bs4" name="progres" id="progres" style="width: 100%;" required></br>
+                    <label for="keterangan"><strong>Progres<strong></label><br>
+                    <select class="form-control select2bs4" name="keterangan" id="keterangan" style="width: 100%;" required></br>
                       <option value="Kajian">Kajian</option>
                       <option value="Prerencanaan">Prerencanaan</option>
                       <option value="Pengadaan">Pengadaan</option>
@@ -54,14 +53,6 @@
                   <div class="form-group">
                     <label for="tanggal"><strong>Tanggal<strong></label><br>
                       <input type="date" class="form-control" required="required" name="tanggal" id="datepicker" placeholder="Masukkan Tanggal Sewa">
-                  </div>
-                  <div class="form-group">
-                    <label for="keterangan"><strong>Keterangan<strong></label><br>
-                    <input type="text" class="form-control" id="keterangan" name="keterangan" placeholder="Masukkan Evaluasi Rekomendasi" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
-                    <input type="file" class="form-control" required="required" name="upload_kajian"></br> 
                   </div>
                 </div>
                 <!-- /.card-body -->

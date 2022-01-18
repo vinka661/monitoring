@@ -56,6 +56,15 @@ Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
 Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');
 
 //Progres
-Route::get('progres', 'progresController@index')->name('progres');
-Route::get('progres/create', 'progresController@create')->name('createProgres');
-Route::post('progres/store', 'progresController@store')->name('storeProgres');
+Route::get('progres', 'ProgresController@index')->name('progres');
+Route::get('progres/create', 'ProgresController@create')->name('createProgres');
+Route::post('progres/store', 'ProgresController@store')->name('storeProgres');
+Route::get('progres/edit/{id_fdt}', 'ProgresController@edit')->name('editProgres');
+Route::post('progres/update/{id_fdt}', 'ProgresController@update')->name('updateProgres');
+Route::get('progres/delete/{id_fdt}', 'ProgresController@destroy')->name('deleteProgres');
+
+
+//Halaman Pic
+Route::get('/berandaPic', 'berandaPicController@berandaPic')->name('berandaPic');
+Route::get('rcfaPic', 'rcfaPicController@index')->name('rcfaPic');
+Route::get('fdtPic', 'fdtPicController@index')->name('fdtPic');
