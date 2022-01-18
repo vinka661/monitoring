@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Area;
-
+use PDF;
 use Illuminate\Http\Request;
 
 class areaController extends Controller
@@ -49,5 +49,11 @@ class areaController extends Controller
         $area = Area::find($area_id);
         $area->delete();
         return redirect('area');
+    }
+
+    public function cetakArea(){
+        $area = Area::all();
+        $pdf = PDF::loadview('area.cetakArea',['area'=>$area]);
+        return $pdf->stream();
     }
 }

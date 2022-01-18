@@ -22,6 +22,7 @@ Route::post('area/store', 'areaController@store')->name('storeArea');
 Route::get('area/edit/{area_id}', 'areaController@edit')->name('editArea');
 Route::post('area/update/{area_id}', 'areaController@update')->name('updateArea');
 Route::get('area/delete/{area_id}', 'areaController@destroy')->name('deleteArea');
+Route::get('area/cetakArea', 'areaController@cetakArea')->name('cetakArea');
 
 //pic
 Route::get('pic', 'picController@index')->name('pic');
