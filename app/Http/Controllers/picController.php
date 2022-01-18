@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Pic;
+use PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class picController extends Controller
 {
@@ -27,7 +29,7 @@ class picController extends Controller
         Pic::create([
             'nid'      => $request->nid,
             'nama'     => $request->nama,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'bidang'   => $request->bidang,
             'fungsi'   => $request->fungsi,
             'level'    => $request->level,
@@ -47,7 +49,7 @@ class picController extends Controller
         $pic = Pic::find($pic_id);
         $pic->nid = $request->nid;
         $pic->nama = $request->nama;
-        $pic->password = $request->password;
+        $pic->password = Hash::make($request->password);
         $pic->bidang = $request->bidang;
         $pic->fungsi = $request->fungsi;
         $pic->level = $request->level;
@@ -62,4 +64,9 @@ class picController extends Controller
         return redirect('pic');
     }
     
+    public function cetakPic(){
+        $pic = Pic::all();
+        $pdf = PDF::loadview('pic.cetakPic',['pic'=>$pic]);
+        return $pdf->stream();
+    }
 }

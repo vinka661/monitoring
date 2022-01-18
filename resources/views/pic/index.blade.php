@@ -8,7 +8,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <a href="{{ route('createPic') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('createPic') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('cetakPic') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data PIC</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

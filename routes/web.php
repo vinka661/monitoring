@@ -31,6 +31,7 @@ Route::post('pic/store', 'picController@store')->name('storePic');
 Route::get('pic/edit/{pic_id}', 'picController@edit')->name('editPic');
 Route::post('pic/update/{pic_id}', 'picController@update')->name('updatePic');
 Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
+Route::get('pic/cetakPic', 'picController@cetakPic')->name('cetakPic');
 
 //asset
 Route::get('aset', 'asetController@index')->name('aset');
