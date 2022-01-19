@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Progres;
 use App\Fdt;
 use App\Pic;
+use PDF;
 use Illuminate\Http\Request;
 
 class ProgresController extends Controller
@@ -34,17 +35,18 @@ class ProgresController extends Controller
         return redirect('progres');
     }
 
-    public function edit($id_fdt)
+    public function edit($progres_id)
     {
-        $progres = Progres::all();
-        $fdt = Fdt::find($id_fdt);
+        $progres = Progres::find($progres_id);
+        $fdt = Fdt::all();
         $pic = Pic::all();
         return view('progres.edit',['progres' => $progres,'fdt' => $fdt, 'pic' => $pic]);
     }
 
-    public function update(Request $request, $id_fdt)
+    public function update(Request $request, $progres_id)
     {
-        $progres = progres::find($id_fdt);
+        $progres = Progres::find($progres_id);
+        $progres->progres_id = $request->progres_id;
         $progres->id_fdt = $request->fdt;
         $progres->id_pic = $request->pic;
         $progres->tanggal = $request->tanggal;
@@ -54,10 +56,16 @@ class ProgresController extends Controller
         return redirect('progres');
     }
 
-    public function destroy($id)
+    public function destroy($progres_id)
     {
-        $progres = progres::find($id);
-        $rcfa->delete();
+        $progres = Progres::find($progres_id);
+        $progres->delete();
         return redirect('progres');
+    }
+
+    public function cetakProgres(){
+        $progres = Progres::all();
+        $pdf = PDF::loadview('progres.cetakProgres',['progres'=>$progres]);
+        return $pdf->stream();
     }
 }

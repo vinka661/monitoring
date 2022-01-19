@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Asset;
 use App\Rcfa;
+use PDF;
 use Illuminate\Http\Request;
 
 class rcfaController extends Controller
@@ -68,5 +69,11 @@ class rcfaController extends Controller
         $rcfa = Rcfa::find($id);
         $rcfa->delete();
         return redirect('rcfa');
+    }
+
+    public function cetakRcfa(){
+        $rcfa = Rcfa::all();
+        $pdf = PDF::loadview('rcfa.cetakRcfa',['rcfa'=>$rcfa]);
+        return $pdf->stream();
     }
 }

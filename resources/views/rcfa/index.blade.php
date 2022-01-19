@@ -8,7 +8,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <a href="{{ route('createRcfa') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('createRcfa') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('cetakRcfa') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data RCFA</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -17,16 +18,10 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Asset Number</th>
-                                            <th>Judul</th>
+                                            <th>Judul RCFA</th>
                                             <th>Tanggal</th>
                                             <th>Input</th>
                                             <th>Failure Mode</th>
-                                            <th>Evaluasi Rekom</th>
-                                            <th>Berulang 1 Bulan</th>
-                                            <th>Berulang 3 Bulan</th>
-                                            <th>Berulang 6 Bulan</th>
-                                            <th>Berulang 1 Tahun</th>
-                                            <th>Berulang 3 Tahun</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -39,15 +34,11 @@
                                             <td>{{ $data->tanggal }}</td>
                                             <td>{{ $data->input }}</td>
                                             <td>{{ $data->failure_mode }}</td>
-                                            <td>{{ $data->evaluasi_rekom }}</td>
-                                            <td>{{ $data->berulang_1_bln }}</td>
-                                            <td>{{ $data->berulang_3_bln }}</td>
-                                            <td>{{ $data->berulang_6_bln }}</td>
-                                            <td>{{ $data->berulang_1_th }}</td>
-                                            <td>{{ $data->berulang_3_th }}</td>
                                             <td>
                                                 <a href="{{ route('editRcfa', $data->rcfa_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                                <a href=""><button  class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Tambah FDT</button></a>
+                                                <a href=""><button  class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Detail RCFA</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

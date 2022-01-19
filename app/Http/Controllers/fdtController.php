@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Rcfa;
 use App\Fdt;
+use PDF;
 use Illuminate\Http\Request;
 
 class fdtController extends Controller
@@ -75,5 +76,11 @@ class fdtController extends Controller
         $fdt = Fdt::find($id);
         $fdt->delete();
         return redirect('fdt');
+    }
+
+    public function cetakFdt(){
+        $fdt = Fdt::all();
+        $pdf = PDF::loadview('fdt.cetakFdt',['fdt'=>$fdt]);
+        return $pdf->stream();
     }
 }

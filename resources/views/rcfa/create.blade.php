@@ -53,7 +53,7 @@
                     <label for="failure_mode"><strong>Failure Mode<strong></label><br>
                     <input type="text" class="form-control" id="failure_mode" name="failure_mode" placeholder="Masukkan Failure Mode" required>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi<strong></label><br>
                     <input type="text" class="form-control" id="evaluasi_rekom" name="evaluasi_rekom" placeholder="Masukkan Evaluasi Rekomendasi" required>
                   </div>
@@ -96,7 +96,7 @@
                             <input type="radio" id="berulang_3_th" name="berulang_3_th" value="1"> Ya &nbsp;&nbsp;
                             <input type="radio" id="berulang_3_th" name="berulang_3_th" value="0"> Tidak
                           </label>
-                  </div>
+                  </div> -->
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Asset;
 use App\Area;
+use PDF;
 class asetController extends Controller
 {
     public function index()
@@ -61,4 +62,9 @@ class asetController extends Controller
         return redirect('aset');
     }
 
+    public function cetakAset(){
+        $aset = Asset::all();
+        $pdf = PDF::loadview('aset.cetakAset',['aset'=>$aset]);
+        return $pdf->stream();
+    }
 }

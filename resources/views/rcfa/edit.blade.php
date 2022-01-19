@@ -57,7 +57,7 @@
                         <label for="failure_mode"><strong>Failure Mode</strong></label></br>
                         <input type="text" class="form-control" id="failure_mode" name="failure_mode" value="{{ $rcfa->failure_mode }}">
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi</strong></label></br>
                         <input type="text" class="form-control" id="evaluasi_rekom" name="evaluasi_rekom" value="{{ $rcfa->evaluasi_rekom }}">
                       </div>
@@ -100,7 +100,7 @@
                             <input type="radio" id="ya" name="berulang_3_th" value="1" {{ $rcfa->berulang_3_th == '1' ? 'checked' : ''}}> Ya &nbsp;&nbsp;
                             <input type="radio" id="tidak" name="berulang_3_th" value="0" {{ $rcfa->berulang_3_th == '0' ? 'checked' : ''}}> Tidak
                           </label>
-                      </div>
+                      </div> -->
                     </div>
                     <!-- /.card-body -->
     

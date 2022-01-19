@@ -8,7 +8,8 @@ class Progres extends Model
 {
     public $table = "progress";
     protected $fillable = ['tanggal', 'keterangan', 'id_fdt', 'id_pic'];
-    public $incrementing = false;
+    // public $incrementing = false;
+    protected $primaryKey = 'progres_id';
 
     public function Fdt()
     {

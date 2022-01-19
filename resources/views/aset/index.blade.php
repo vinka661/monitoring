@@ -8,7 +8,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                        <a href="{{ route('createAset') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('createAset') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('cetakAset') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data Asset</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -16,7 +17,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Asset ID</th>
+                                            <th>Asset Number</th>
                                             <th>Area</th>
                                             <th>RBDID</th>
                                             <th>Equipment</th>

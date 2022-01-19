@@ -21,14 +21,18 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-            <form role="form" action="{{ route('updateProgres', $progres->id_fdt) }}" method="POST">
+            <form role="form" action="{{ route('updateProgres', $progres->progres_id) }}" method="POST">
                 @csrf
                 <div class="card-body">
+                  <div class="form-group">
+                    <label for="progres_id"><strong>Progres ID<strong></label><br>
+                    <input type="text" class="form-control" id="progres_id" name="progres_id" value="{{ $progres->progres_id }}">
+                  </div>
                   <div class="form-group">
                     <label for="fdt"><strong>Nama FDT </strong></label>
                       <select class="form-control select2bs4" name="fdt" id="fdt" style="width: 100%;" required><br>
                       @foreach ($fdt as $item)
-                        <option value="{{ $item->fdt_id }}" {{ $fdt->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
+                        <option value="{{ $item->fdt_id }}" {{ $progres->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
                       @endforeach
                     </select>
                   </div>
@@ -36,7 +40,7 @@
                     <label for="pic"><strong>Nama PIC</strong></label>
                     <select class="form-control select2bs4" name="pic" id="pic" style="width: 100%;" required><br>
                       @foreach ($pic as $item)
-                        <option value="{{ $item->pic_id }}" {{ $pic->id_pic == $item->pic_id ? 'selected' : '' }}>{{ $item->nama }}</option>
+                        <option value="{{ $item->pic_id }}" {{ $progres->id_pic == $item->pic_id ? 'selected' : '' }}>{{ $item->nama }}</option>
                       @endforeach
                     </select>
                   </div>

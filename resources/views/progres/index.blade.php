@@ -9,6 +9,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <a href="{{ route('createProgres') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('cetakProgres') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data Progres</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -17,6 +18,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama FDT</th>
+                                            <th>Nama PIC</th>
                                             <th>Progres</th>
                                             <th>Tanggal</th>
                                             <th>Aksi</th>
@@ -27,12 +29,13 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->fdt->nama_fdt }}</td>
+                                            <td>{{ $data->pic->nama }}</td>
                                             <td>{{ $data->keterangan }}</td>
                                             <td>{{ $data->tanggal }}</td>
                                           
                                             <td>
-                                                <a href="{{ route('editProgres', $data->id_fdt) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href="{{ route('deleteProgres', $data->id_fdt) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                                <a href="{{ route('editProgres', $data->progres_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                <a href="{{ route('deleteProgres', $data->progres_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

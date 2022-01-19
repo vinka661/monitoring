@@ -9,6 +9,7 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <a href="{{ route('createFdt') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('cetakFdt') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data FDT</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -39,6 +40,7 @@
                                             <td>{{ $data->target }}</td>
                                             <td>{{ $data->no_wo }}</td>
                                             <td>{{ $data->actual_finish}}</td>
+                                            <td>{{ $data->rkap_rjpu}}</td>
                                             <td>{{ $data->upload_kajian}}</td>
                                             <td>
                                                 <a href="{{ route('editFdt', $data->fdt_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
