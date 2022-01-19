@@ -22,6 +22,13 @@ class fdtController extends Controller
         // $aset = Asset::all();
         return view('fdt.create', ['rcfa' => $rcfa]);
     }
+    // public function create($rcfa_id)
+    // {
+        
+    //     $rcfa = Rcfa::find($rcfa_id);
+    //     $fdt = Fdt::all();
+    //     return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa]);
+    // }
 
     public function store(Request $request)
     {
@@ -41,6 +48,27 @@ class fdtController extends Controller
         ]);
         return redirect('fdt');
     }
+
+    //  public function store(Request $request,$rcfa_id)
+    // {
+    //     if($request->file('upload_kajian')){ 
+	// 	    $upload_kajian = $request->file('upload_kajian')->store('files','public');
+    //     }
+    //     $rcfa = Rcfa::find($rcfa_id);
+    //     $rcfa->rcfa_id = $request->rcfa_id;
+    //     Fdt::create([
+    //         // 'id_rcfa' => $request->id_rcfa,
+    //         'root_cause' => $request->root_cause,
+    //         'nama_fdt' => $request->nama_fdt,
+    //         'jangka' => $request->jangka,
+    //         'target' => $request->target,
+    //         'no_wo' => $request->no_wo,
+    //         'actual_finish' => $request->actual_finish,
+    //         'rkap_rjpu' => $request->rkap_rjpu,
+    //         'upload_kajian' => $upload_kajian,
+    //     ]);
+    //     return redirect('fdt');
+    // }
 
     public function edit($fdt_id)
     {

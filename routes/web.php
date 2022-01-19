@@ -73,3 +73,6 @@ Route::get('progres/cetakProgres', 'ProgresController@cetakProgres')->name('ceta
 Route::get('/berandaPic', 'berandaPicController@berandaPic')->name('berandaPic');
 Route::get('rcfaPic', 'rcfaPicController@index')->name('rcfaPic');
 Route::get('fdtPic', 'fdtPicController@index')->name('fdtPic');
+Route::get('progresPic', 'ProgresPicController@index')->name('progresPic');
+Route::get('progresPic/edit/{progres_id}', 'ProgresPicController@edit')->name('editProgresPic');
+Route::post('progresPic/update/{progres_id}', 'ProgresPicController@update')->name('updateProgresPic');

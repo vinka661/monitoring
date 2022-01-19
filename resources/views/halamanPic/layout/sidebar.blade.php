@@ -41,7 +41,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route ('progres')}}">
+        <a class="nav-link" href="{{route ('progresPic')}}">
                 <i class="fas fa-spinner"></i>
                 <span>Progres</span>
         </a>

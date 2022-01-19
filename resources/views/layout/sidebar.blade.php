@@ -86,6 +86,20 @@
                 <span>Progres</span>
         </a>
     </li>
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item active">
+        <a class="nav-link" href="#">  
+            <span>DATA LAPORAN</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item">
+        <a class="nav-link" href="">
+                <i class="fas fa-paste"></i>
+                <span>Laporan</span>
+        </a>
+    </li>
+
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
