@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Asset;
 use App\Rcfa;
+use App\Fdt;
 use PDF;
 use Illuminate\Http\Request;
 
@@ -36,6 +37,13 @@ class rcfaController extends Controller
             'berulang_3_th' => $request->berulang_3_th,
         ]);
         return redirect('rcfa');
+    }
+
+    public function editDetail($rcfa_id)
+    {
+        $fdt = Fdt::all();
+        $rcfa = Rcfa::find($rcfa_id);
+        return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa]);
     }
 
     public function edit($rcfa_id)

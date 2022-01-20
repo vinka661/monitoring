@@ -12,7 +12,7 @@
     <title>Monitoring || FDT</title>
     <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
-
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- Google Font: Source Sans Pro -->

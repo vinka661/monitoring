@@ -30,13 +30,16 @@ class fdtController extends Controller
     //     return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa]);
     // }
 
-    public function store(Request $request)
+    public function store(Request $request, $rcfa_id)
     {
         if($request->file('upload_kajian')){ 
 		    $upload_kajian = $request->file('upload_kajian')->store('files','public');
         }
+        $rcfa = Rcfa::find($rcfa_id);
+        
         Fdt::create([
-            'id_rcfa' => $request->id_rcfa,
+            'id_rcfa' => $request->rcfa_id,
+            $rcfa->rcfa_id => $request->rcfa_id,
             'root_cause' => $request->root_cause,
             'nama_fdt' => $request->nama_fdt,
             'jangka' => $request->jangka,
@@ -48,27 +51,6 @@ class fdtController extends Controller
         ]);
         return redirect('fdt');
     }
-
-    //  public function store(Request $request,$rcfa_id)
-    // {
-    //     if($request->file('upload_kajian')){ 
-	// 	    $upload_kajian = $request->file('upload_kajian')->store('files','public');
-    //     }
-    //     $rcfa = Rcfa::find($rcfa_id);
-    //     $rcfa->rcfa_id = $request->rcfa_id;
-    //     Fdt::create([
-    //         // 'id_rcfa' => $request->id_rcfa,
-    //         'root_cause' => $request->root_cause,
-    //         'nama_fdt' => $request->nama_fdt,
-    //         'jangka' => $request->jangka,
-    //         'target' => $request->target,
-    //         'no_wo' => $request->no_wo,
-    //         'actual_finish' => $request->actual_finish,
-    //         'rkap_rjpu' => $request->rkap_rjpu,
-    //         'upload_kajian' => $upload_kajian,
-    //     ]);
-    //     return redirect('fdt');
-    // }
 
     public function edit($fdt_id)
     {
@@ -98,6 +80,28 @@ class fdtController extends Controller
         $fdt->save();
         return redirect('fdt');
     }
+    // public function update2(Request $request, $rcfa_id)
+    // {
+    //     // $fdt = Fdt::find($fdt_id);
+    //     $rcfa = Rcfa::find($rcfa_id);
+    //     // $fdt->id_rcfa = $request->id_rcfa;
+    //     $fdt->root_cause = $request->root_cause;
+    //     $fdt->nama_fdt = $request->nama_fdt;
+    //     $fdt->jangka = $request->jangka;
+    //     $fdt->target = $request->target;
+    //     $fdt->no_wo = $request->no_wo;
+    //     $fdt->actual_finish = $request->actual_finish;
+    //     $fdt->rkap_rjpu = $request->rkap_rjpu;
+    //     if($fdt->upload_kajian && file_exists(storage_path('app/public/' . $fdt->upload_kajian)))
+    //     {
+    //         \Storage::delete('public/'.$fdt->upload_kajian);
+    //     }
+    //     $upload_kajian = $request->file('upload_kajian')->store('files', 'public');
+    //     $fdt->upload_kajian = $upload_kajian;
+        
+    //     $fdt->save();
+    //     return redirect('fdt');
+    // }
 
     public function destroy($id)
     {

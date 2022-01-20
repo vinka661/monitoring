@@ -24,26 +24,10 @@
               <form role="form" action="{{ route('storeFdt') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
-                  {{-- <div class="form-group">
-                    <label for="rcfa"><strong>RCFA ID</strong></label>
-                    <select class="form-control select2bs4" name="rcfa" id="rcfa" style="width: 100%;" required disabled>
-                      @foreach ($rcfa as $item)
-                        <option value="{{ $item->rcfa_id }}" {{ $rcfa->id_rcfa == $item->rcfa_id ? 'selected' : '' }}>{{ $item->keterangan }}</option>
-                      @endforeach
-                    </select>
-                  </div> --}}
-                  {{-- <div class="form-group">
-                    <label for="rcfa"><strong>RCFA ID<strong></label><br>
-                    <input type="text" class="form-control" id="rcfa" name="rcfa" value="{{ $fdt->id_rcfa}}" disabled>
-                  </div> --}}
-                  <div class="form-group">
-                    <label for="id_rcfa"><strong>Judul RCFA </strong></label>
-                    <select class="form-control select2bs4" name="id_rcfa" id="id_rcfa" style="width: 100%;" required><br>
-                      @foreach ($rcfa as $item)
-                        <option value="{{ $item->rcfa_id }}">{{ $item->keterangan}}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                <div class="form-group">
+                        <label for="rcfa_id"><strong>RCFA ID<strong></label><br>
+                        <input type="text" class="form-control" id="rcfa_id" name="rcfa_id" value="{{ $rcfa->rcfa_id }}" disabled>
+                      </div>
                   <div class="form-group">
                     <label for="root_cause"><strong>Root Cause<strong></label><br>
                     <input type="text" class="form-control" id="root_cause" name="root_cause" placeholder="Masukkan Root Cause" required>

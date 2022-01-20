@@ -50,6 +50,7 @@ Route::get('rcfa/edit/{rcfa_id}', 'rcfaController@edit')->name('editRcfa');
 Route::post('rcfa/update/{rcfa_id}', 'rcfaController@update')->name('updateRcfa');
 Route::get('rcfa/delete/{rcfa_id}', 'rcfaController@destroy')->name('deleteRcfa');
 Route::get('rcfa/cetakRcfa', 'rcfaController@cetakRcfa')->name('cetakRcfa');
+Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
 
 //fdt
 Route::get('fdt', 'fdtController@index')->name('fdt');
