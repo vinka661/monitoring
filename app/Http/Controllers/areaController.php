@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 use App\Area;
 use PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class areaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('admin')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function area()
     {
         return view('area.index');

@@ -5,10 +5,16 @@ use App\Progres;
 use App\Fdt;
 use App\Pic;
 use PDF;
+use Auth;
 use Illuminate\Http\Request;
 
 class ProgresController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $progres = Progres::all();

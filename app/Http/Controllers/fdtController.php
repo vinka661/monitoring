@@ -5,9 +5,19 @@ use App\Rcfa;
 use App\Fdt;
 use PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class fdtController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('admin')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function index()
     {
         $fdt = Fdt::all();
@@ -30,16 +40,16 @@ class fdtController extends Controller
     //     return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa]);
     // }
 
-    public function store(Request $request, $rcfa_id)
+    public function store(Request $request)
     {
         if($request->file('upload_kajian')){ 
 		    $upload_kajian = $request->file('upload_kajian')->store('files','public');
         }
-        $rcfa = Rcfa::find($rcfa_id);
+        // $rcfa = Rcfa::find($rcfa_id);
         
         Fdt::create([
             'id_rcfa' => $request->rcfa_id,
-            $rcfa->rcfa_id => $request->rcfa_id,
+            // $rcfa->rcfa_id => $request->rcfa_id,
             'root_cause' => $request->root_cause,
             'nama_fdt' => $request->nama_fdt,
             'jangka' => $request->jangka,

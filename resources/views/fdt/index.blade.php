@@ -8,7 +8,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="{{ route('createFdt') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <!-- <a href="{{ route('createFdt') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a> -->
                             <a href="{{ route('cetakFdt') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Data FDT</a>
                         </div>
                         <div class="card-body">

@@ -6,9 +6,19 @@ use App\Rcfa;
 use App\Fdt;
 use PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class rcfaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('admin')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function index()
     {
         $rcfa = Rcfa::all();
