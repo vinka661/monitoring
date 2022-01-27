@@ -23,11 +23,8 @@
             <div class="card card-primary card-outline">
               <form role="form" action="{{ route('storeFdt') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="id_rcfa" value="{{ $rcfa->rcfa_id }}">
                 <div class="card-body">
-                <div class="form-group">
-                        <label for="rcfa_id"><strong>RCFA ID<strong></label><br>
-                        <input type="text" class="form-control" id="rcfa_id" name="rcfa_id" value="{{ $rcfa->rcfa_id }}" disabled>
-                      </div>
                   <div class="form-group">
                     <label for="root_cause"><strong>Root Cause<strong></label><br>
                     <input type="text" class="form-control" id="root_cause" name="root_cause" placeholder="Masukkan Root Cause" required>

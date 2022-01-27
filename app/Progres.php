@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Progres extends Model
 {
     public $table = "progress";
-    protected $fillable = ['tanggal', 'keterangan', 'id_fdt', 'id_pic'];
+    protected $fillable = ['tanggal_progres', 'nama_progres', 'id_fdt', 'id_pic'];
     // public $incrementing = false;
     protected $primaryKey = 'progres_id';
 

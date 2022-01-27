@@ -25,8 +25,8 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="nama"><strong>Nama Area<strong></label><br></br>
-                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Area" required>
+                    <label for="nama_area"><strong>Nama Area<strong></label><br></br>
+                    <input type="text" class="form-control" id="nama_area" name="nama_area" placeholder="Nama Area" required>
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -1,4 +1,4 @@
-@extends('halamanPic.layout.master')
+@extends('layout.master')
 @section('konten')
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -6,53 +6,20 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">DATA  RCFA</h1>
                     <!-- DataTales Example -->
-                    
-                        <!-- <div class="card-header py-3">
-                        <a href="{{ route('createRcfa') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a> 
-                        </div> -->
-                        <!-- <div class="card-body"> -->
-                            <!-- <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Judul</th>
-                                            <th>Tanggal</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($rcfaPic as $key => $data)
-                                        <tr>
-                                            <td>{{ ++$key }}</td>
-                                            <td>{{ $data->keterangan }}</td>
-                                            <td>{{ $data->tanggal }}</td>
-                                            <td>
-                                                <a href="{{ route('fdtPic') }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Detail FDT</button></a>
-                                              </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div> -->
-                        <!-- </div> -->
-                        @foreach($rcfaPic as $key => $data)
-            <div class="card" style="max-width: 540px;">
-                <div class="row no-gutters">
-		        <div class="col-md-4">
-			    <img src="img/rcfa.png"  class="card-img" alt="...">
-		    </div>
-            <div class="col-md-8 bg-primary text-white">
-			    <div class="card-body">
-               
-				<h5 class="card-title">Judul Rcfa</h5>{{ ++$key }}.{{ $data->keterangan }}
-				<p class="card-text">Tanggal : {{ $data->tanggal }}</p>
-				<a href="{{ route('fdtPic') }}" class="btn btn-primary">Detail FDT</a>
-			</div>
-		</div>
-	</div>
-    @endforeach
-
+                    <div class="card-deck">
+                        @foreach ($pic as $key => $data)
+                        @php
+                            $id = str_replace('@mail.com', '', Auth::user()->email);;
+                        @endphp
+                        <div class="card">
+                          <img src="../img/rcfa.png" class="card-img-top" alt="..." width="200" height="200">
+                          <div class="card-body bg-primary text-white">
+                            <h5 class="card-title"><b>Judul Rcfa</b></h5>{{ ++$key }}. {{ $data->keterangan }}
+                            <p class="card-text">Tanggal : {{ $data->tanggal }}</p>
+                          </div>
+                          <a href="{{ url('pic_fdt/'. $id) }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat FDT</a>
+                        </div>
+                        @endforeach
                     </div>
 
                 </div>

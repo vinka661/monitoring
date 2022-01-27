@@ -17,9 +17,10 @@
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="../../css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select2 -->
   <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -29,6 +30,9 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+    @php
+        $id = str_replace('@mail.com', '', Auth::user()->email);;
+    @endphp
         <!-- Sidebar -->
      @include('layout.sidebar')
         <!-- End of Sidebar -->
@@ -413,7 +417,8 @@
     <!-- Page level custom scripts -->
     <script src="../../js/demo/chart-area-demo.js"></script>
     <script src="../../js/demo/chart-pie-demo.js"></script>
-<!-- jQuery -->
+
+    <!-- jQuery -->
 <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -433,6 +438,15 @@
     })
   })
   </script>
+  
+     <!-- Page level plugins -->
+     <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="../../js/demo/datatables-demo.js"></script>
+
+
 </body>
 
 </html>

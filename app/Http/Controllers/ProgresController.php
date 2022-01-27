@@ -35,8 +35,8 @@ class ProgresController extends Controller
         Progres::create([
             'id_fdt' => $request->fdt,
             'id_pic' => $request->pic,
-            'tanggal' => $request->tanggal,
-            'keterangan' => $request->keterangan,
+            'tanggal_progres' => $request->tanggal_progres,
+            'nama_progres' => $request->nama_progres,
         ]);
         return redirect('progres');
     }
@@ -55,8 +55,8 @@ class ProgresController extends Controller
         $progres->progres_id = $request->progres_id;
         $progres->id_fdt = $request->fdt;
         $progres->id_pic = $request->pic;
-        $progres->tanggal = $request->tanggal;
-        $progres->keterangan = $request->keterangan;
+        $progres->tanggal_progres = $request->tanggal_progres;
+        $progres->nama_progres = $request->nama_progres;
         
         $progres->save();
         return redirect('progres');

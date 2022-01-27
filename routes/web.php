@@ -38,6 +38,9 @@ Route::get('pic/edit/{pic_id}', 'picController@edit')->name('editPic');
 Route::post('pic/update/{pic_id}', 'picController@update')->name('updatePic');
 Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
 Route::get('pic/cetakPic', 'picController@cetakPic')->name('cetakPic');
+Route::get('pic_rcfa/{id}', 'picController@indexRcfa');
+Route::get('pic_fdt/{id}', 'picController@indexFdt');
+Route::get('pic_progres/{id}', 'picController@indexProgres');
 
 //asset
 Route::get('aset', 'asetController@index')->name('aset');
@@ -56,17 +59,18 @@ Route::get('rcfa/edit/{rcfa_id}', 'rcfaController@edit')->name('editRcfa');
 Route::post('rcfa/update/{rcfa_id}', 'rcfaController@update')->name('updateRcfa');
 Route::get('rcfa/delete/{rcfa_id}', 'rcfaController@destroy')->name('deleteRcfa');
 Route::get('rcfa/cetakRcfa', 'rcfaController@cetakRcfa')->name('cetakRcfa');
-// Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
+Route::get('rcfa/detailFdt/{rcfa_id}', 'rcfaController@detailFdt')->name('detailFdt');
+Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
 
 //fdt
 Route::get('fdt', 'fdtController@index')->name('fdt');
-Route::get('fdt/create', 'fdtController@create')->name('createFdt');
+Route::get('fdt/create/{rcfa?}', 'fdtController@create')->name('createFdt');
 Route::post('fdt/store', 'fdtController@store')->name('storeFdt');
 Route::get('fdt/edit/{fdt_id}', 'fdtController@edit')->name('editFdt');
 Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
 Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');
 Route::get('fdt/cetakFdt', 'fdtController@cetakFdt')->name('cetakFdt');
-Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
+// Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
 
 //Progres
 Route::get('progres', 'ProgresController@index')->name('progres');
@@ -82,12 +86,19 @@ Route::get('laporan', 'laporanController@index')->name('laporan');
 Route::get('laporan/cetakLaporan', 'laporanController@cetakLaporan')->name('cetakLaporan');
 
 //Halaman Pic
-Route::get('/berandaPic', 'berandaPicController@berandaPic')->name('berandaPic');
-Route::get('rcfaPic', 'rcfaPicController@index')->name('rcfaPic');
-Route::get('fdtPic', 'fdtPicController@index')->name('fdtPic');
+Route::get('berandaPic', 'berandaPicController@berandaPic')->name('berandaPic');
+// Route::get('rcfaPic/{pic_id}', 'picController@indexRcfa');
+// Route::get('rcfaPic', 'rcfaPicController@index')->name('rcfaPic');
+// Route::get('fdtPic', 'fdtPicController@index')->name('fdtPic');
 Route::get('progresPic', 'ProgresPicController@index')->name('progresPic');
 Route::get('progresPic/edit/{progres_id}', 'ProgresPicController@edit')->name('editProgresPic');
 Route::post('progresPic/update/{progres_id}', 'ProgresPicController@update')->name('updateProgresPic');
+
+//Laporan User
+//Laporan
+Route::get('laporanUser', 'laporanUserController@index')->name('laporanUser');
+Route::get('laporanUser/cetakLaporan', 'laporanUserController@cetakLaporan')->name('cetakLaporanUser');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

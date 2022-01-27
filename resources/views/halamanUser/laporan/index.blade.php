@@ -24,24 +24,13 @@
                                             <th>Tanggal Kejadian</th>
                                             <th>Input</th>
                                             <th>Failure Mode</th>
-                                            <th>Root Cause</th>
-                                            <th>FDT</th>
-                                            <th>PIC</th>
-                                            <th>Jangka</th>
-                                            <th>Target</th>
-                                            <th>No Wo</th>
-                                            <th>Actual Finish</th>
-                                            <th>RKAP/RJPU</th>
-                                            <th>Tanggal Progres</th>
-                                            <th>Progres</th>
-                                            <th>Evaluasi Rekomendasi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($laporan as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->nama_area }}</td>
+                                            <td>{{ $data->nama }}</td>
                                             <td>{{ $data->asset_id }}</td>
                                             <td>{{ $data->rbdid }}</td>
                                             <td>{{ $data->equipment }}</td>
@@ -49,17 +38,6 @@
                                             <td>{{ $data->tanggal }}</td>
                                             <td>{{ $data->input }}</td>
                                             <td>{{ $data->failure_mode }}</td>
-                                            <td>{{ $data->root_cause }}</td>
-                                            <td>{{ $data->nama_fdt }}</td>
-                                            <td>{{ $data->nama }}</td>
-                                            <td>{{ $data->jangka }}</td>
-                                            <td>{{ $data->target }}</td>
-                                            <td>{{ $data->no_wo }}</td>
-                                            <td>{{ $data->actual_finish }}</td>
-                                            <td>{{ $data->rkap_rjpu }}</td>
-                                            <td>{{ $data->tanggal_progres }}</td>
-                                            <td>{{ $data->nama_progres }}</td>
-                                            <td>{{ $data->evaluasi_rekom }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

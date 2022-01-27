@@ -34,11 +34,11 @@
 
             .table th,
             .table td {
-                padding: 0.75rem;
+                /* padding: 0.3rem; */
                 vertical-align: top;
                 border-top: 1px solid #dee2e6;
                 text-align: left;
-                font-size: 10px;
+                font-size: 7.2px;
             }
 
             .table thead th {
@@ -98,7 +98,7 @@
                     <th>Tanggal Kejadian</th>
                     <th>Input</th>
                     <th>Failure Mode</th>
-                    <!-- <th>Root Cause</th>
+                    <th>Root Cause</th>
                     <th>FDT</th>
                     <th>PIC</th>
                     <th>Jangka</th>
@@ -108,8 +108,7 @@
                     <th>RKAP/RJPU</th>
                     <th>Tanggal Progres</th>
                     <th>Progres</th>
-                    <th>Keterangan</th>
-                    <th>Evaluasi Rekomendasi</th> -->
+                    <th>Evaluasi Rekomendasi</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,6 +123,17 @@
                         <td>{{ $data->tanggal }}</td>
                         <td>{{ $data->input }}</td>
                         <td>{{ $data->failure_mode }}</td>
+                        <td>{{ $data->root_cause }}</td>
+                        <td>{{ $data->nama_fdt }}</td>
+                        <td>{{ $data->nama }}</td>
+                        <td>{{ $data->jangka }}</td>
+                        <td>{{ $data->target }}</td>
+                        <td>{{ $data->no_wo }}</td>
+                        <td>{{ $data->actual_finish }}</td>
+                        <td>{{ $data->rkap_rjpu }}</td>
+                        <td>{{ $data->tanggal_progres }}</td>
+                        <td>{{ $data->nama_progres }}</td>
+                        <td>{{ $data->evaluasi_rekom }}</td>
                     </tr>
                 @endforeach
             </tbody>

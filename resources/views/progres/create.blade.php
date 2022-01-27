@@ -41,8 +41,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="keterangan"><strong>Progres<strong></label><br>
-                    <select class="form-control select2bs4" name="keterangan" id="keterangan" style="width: 100%;" required></br>
+                    <label for="nama_progres"><strong>Progres<strong></label><br>
+                    <select class="form-control select2bs4" name="nama_progres" id="nama_progres" style="width: 100%;" required></br>
                       <option value="Kajian">Kajian</option>
                       <option value="Prerencanaan">Prerencanaan</option>
                       <option value="Pengadaan">Pengadaan</option>
@@ -51,8 +51,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="tanggal"><strong>Tanggal<strong></label><br>
-                      <input type="date" class="form-control" required="required" name="tanggal" id="datepicker" placeholder="Masukkan Tanggal Sewa">
+                    <label for="tanggal_progres"><strong>Tanggal<strong></label><br>
+                      <input type="date" class="form-control" required="required" name="tanggal_progres" id="datepicker" placeholder="Masukkan Tanggal Progres">
                   </div>
                 </div>
                 <!-- /.card-body -->

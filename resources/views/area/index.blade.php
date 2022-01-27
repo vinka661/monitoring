@@ -25,7 +25,7 @@
                                         @foreach($area as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->nama }}</td>
+                                            <td>{{ $data->nama_area }}</td>
                                             <td>
                                                 <a href="{{ route('editArea', $data->area_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteArea', $data->area_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>

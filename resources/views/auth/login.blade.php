@@ -12,7 +12,7 @@
     <title>Halaman Login</title>
     <style>
         .col-xl-10{
-            margin-top:90px;
+            margin-top:70px;
         }
     </style>
 

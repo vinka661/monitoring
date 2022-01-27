@@ -35,29 +35,24 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="keterangan"><strong>Progres<strong></label><br>
-                    <select class="form-control select2bs4" name="keterangan" id="keterangan" style="width: 100%;" required disabled>></br>
-                      <option value="Kajian">Kajian</option>
-                      <option value="Prerencanaan">Prerencanaan</option>
-                      <option value="Pengadaan">Pengadaan</option>
-                      <option value="Eksekusi">Eksekusi</option>
-                      <option value="Finish">Finish</option>
-                      <option value="Kajian"        {{ $progresPic->keterangan == 'Kajian' ? 'selected' : '' }}>Kajian</option>
-                      <option value="Prerencanaan"  {{ $progresPic->keterangan == 'Prerencanaan' ? 'selected' : '' }}>Prerencanaan</option>
-                      <option value="Pengadaan"     {{ $progresPic->keterangan == 'Pengadaan' ? 'selected' : '' }}>Pengadaan</option>
-                      <option value="Eksekusi"      {{ $progresPic->keterangan == 'Eksekusi' ? 'selected' : '' }}>Eksekusi</option>
-                      <option value="Finish"        {{ $progresPic->keterangan == 'Finish' ? 'selected' : '' }}>Finish</option>
+                    <label for="nama_progres"><strong>Progres<strong></label><br>
+                    <select class="form-control select2bs4" name="nama_progres" id="nama_progres" style="width: 100%;" required disabled></br>
+                      <option value="Kajian"        {{ $progresPic->nama_progres == 'Kajian' ? 'selected' : '' }}>Kajian</option>
+                      <option value="Prerencanaan"  {{ $progresPic->nama_progres == 'Prerencanaan' ? 'selected' : '' }}>Prerencanaan</option>
+                      <option value="Pengadaan"     {{ $progresPic->nama_progres == 'Pengadaan' ? 'selected' : '' }}>Pengadaan</option>
+                      <option value="Eksekusi"      {{ $progresPic->nama_progres == 'Eksekusi' ? 'selected' : '' }}>Eksekusi</option>
+                      <option value="Finish"        {{ $progresPic->nama_progres == 'Finish' ? 'selected' : '' }}>Finish</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="tanggal"><strong>Tanggal<strong></label><br>
-                      <input type="date" class="form-control" required="required" name="tanggal" id="datepicker"  value="{{ $progresPic->tanggal }}" >
+                    <label for="tanggal_progres"><strong>Tanggal Progres<strong></label><br>
+                      <input type="date" class="form-control" required="required" name="tanggal_progres" id="datepicker"  value="{{ $progresPic->tanggal_progres }}" >
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('progresPic') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{route('progresPic')}}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

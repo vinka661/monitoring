@@ -35,7 +35,7 @@ class areaController extends Controller
     public function store(Request $request)
     {
         Area::create([
-            'nama' => $request->nama,
+            'nama_area' => $request->nama_area,
         ]);
         return redirect('area')->with('success', 'created successfully.');
     }
@@ -49,7 +49,7 @@ class areaController extends Controller
     public function update(Request $request, $area_id)
     {
         $area = Area::find($area_id);
-        $area->nama = $request->nama;
+        $area->nama_area = $request->nama_area;
         $area->save();
         return redirect('area');
     }

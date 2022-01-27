@@ -4,19 +4,16 @@ namespace App\Http\Controllers;
 use App\Pic;
 use App\User;
 use PDF;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Gate;
+// use Illuminate\Support\Facades\Gate;
 
 class picController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function($request, $next) {
-            if(Gate::allows('admin')) return $next($request);
-            abort(403, 'Anda tidak memiliki cukup hak akses');
-        });   
     }
 
     public function index()
@@ -87,5 +84,42 @@ class picController extends Controller
         $pic = Pic::all();
         $pdf = PDF::loadview('pic.cetakPic',['pic'=>$pic]);
         return $pdf->stream();
+    }
+
+    public function indexRcfa($id)
+    {
+        $pic = DB::table('pics as ps')
+        ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+        ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+        ->join('rcfas as rs', 'rs.rcfa_id','=','fs.id_rcfa')
+        ->select('rs.rcfa_id as rcfa_id', 'rs.keterangan', 'rs.tanggal', 'ps.*')
+        ->where('ps.nid',$id)
+        ->distinct()
+        ->get();
+        return view('halamanPic.rcfa.index',compact('pic'));
+    }
+
+    public function indexFdt($id)
+    {
+        $pic = DB::table('pics as ps')
+        ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+        ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+        ->select('fs.fdt_id as fdt_id', 'fs.nama_fdt', 'fs.target', 'ps.*')
+        ->where('ps.nid',$id)
+        ->distinct()
+        ->get();
+        return view('halamanPic.fdt.index',compact('pic'));
+    }
+
+    public function indexProgres($id)
+    {
+        $pic = DB::table('pics as ps')
+        ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+        ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+        ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_progres', 'ps.*')
+        ->where('ps.nid',$id)
+        ->distinct()
+        ->get();
+        return view('halamanPic.progres.index',compact('pic'));
     }
 }

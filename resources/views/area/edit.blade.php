@@ -29,8 +29,8 @@
                         <input type="text" class="form-control" id="id" name="id" value="{{ $area->area_id }}" disabled>
                       </div>
                       <div class="form-group">
-                        <label for="nama"><strong>Nama Area</strong></label></br>
-                        <input type="text" class="form-control" id="nama" name="nama" value="{{ $area->nama }}">
+                        <label for="nama_area"><strong>Nama Area</strong></label></br>
+                        <input type="text" class="form-control" id="nama_area" name="nama_area" value="{{ $area->nama_area }}">
                       </div>
                     </div>
                     <!-- /.card-body -->

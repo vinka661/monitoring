@@ -24,9 +24,9 @@ class fdtController extends Controller
         return view('fdt.index', ['fdt' => $fdt]);
     }
 
-    public function create()
+    public function create(Rcfa $rcfa)
     {
-        $rcfa = Rcfa::all();
+        // $rcfa = Rcfa::all();
         $fdt = Fdt::all();
         // $rcfa = Rcfa::find($rcfa_id);
         // $aset = Asset::all();
@@ -48,7 +48,7 @@ class fdtController extends Controller
         // $rcfa = Rcfa::find($rcfa_id);
         
         Fdt::create([
-            'id_rcfa' => $request->rcfa_id,
+            'id_rcfa' => $request->id_rcfa,
             // $rcfa->rcfa_id => $request->rcfa_id,
             'root_cause' => $request->root_cause,
             'nama_fdt' => $request->nama_fdt,

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ceta Data Progres</title>
+        <title>Cetak Data Progres</title>
         <style>
 
             * {
@@ -38,7 +38,7 @@
                 vertical-align: top;
                 border-top: 1px solid #dee2e6;
                 text-align: left;
-                font-size: 16px;
+                font-size: 10px;
             }
 
             .table thead th {
@@ -82,7 +82,7 @@
 
     <body>
         <center>
-            <h2>DATA PROGRES</h2>
+            <h2>DATA LAPORAN</h2>
             <h3>MONITORING TINDAK LANJUT FDT RCFA</h3>
         </center>
         <br>
@@ -90,20 +90,40 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama FDT</th>
-                    <th>Nama PIC</th>
-                    <th>Progres</th>
+                    <th>Nama Area</th>
+                    <th>Asset Number</th>
+                    <th>RBDID</th>
+                    <th>Equipment</th>
+                    <th>Judul RCFA</th>
+                    <th>Tanggal Kejadian</th>
+                    <th>Input</th>
+                    <th>Failure Mode</th>
+                    <!-- <th>Root Cause</th>
+                    <th>FDT</th>
+                    <th>PIC</th>
+                    <th>Jangka</th>
+                    <th>Target</th>
+                    <th>No Wo</th>
+                    <th>Actual Finish</th>
+                    <th>RKAP/RJPU</th>
                     <th>Tanggal Progres</th>
+                    <th>Progres</th>
+                    <th>Keterangan</th>
+                    <th>Evaluasi Rekomendasi</th> -->
                 </tr>
             </thead>
             <tbody>
-                @foreach ($progres as $key => $data)
+                @foreach ($laporan as $key => $data)
                     <tr>
                         <td>{{ ++$key }}</td>
-                        <td>{{ $data->fdt->nama_fdt }}</td>
-                        <td>{{ $data->pic->nama }}</td>
-                        <td>{{ $data->nama_progres }}</td>
-                        <td>{{ $data->tanggal_progres }}</td>
+                        <td>{{ $data->nama }}</td>
+                        <td>{{ $data->asset_id }}</td>
+                        <td>{{ $data->rbdid }}</td>
+                        <td>{{ $data->equipment }}</td>
+                        <td>{{ $data->keterangan }}</td>
+                        <td>{{ $data->tanggal }}</td>
+                        <td>{{ $data->input }}</td>
+                        <td>{{ $data->failure_mode }}</td>
                     </tr>
                 @endforeach
             </tbody>

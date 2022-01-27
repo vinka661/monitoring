@@ -1,7 +1,7 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         {{-- <div class="sidebar-brand-icon rotate-n-15"> --}}
         <div class="sidebar-brand-icon ">
             <i class="fas fa-laptop"></i>
@@ -100,7 +100,58 @@
                 <span>Laporan</span>
         </a>
     </li>
-       @endcan 
+    @endcan
+    @can('pic')
+        <li class="nav-item active">
+            <a class="nav-link" href="{{route ('dashboard')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">  
+                <span>DATA MONITORING</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('pic_rcfa/'. $id) }}">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>RCFA</span>
+            </a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="{{ url('pic_fdt/'. $id) }}">
+                    <i class="fas fa-check-circle"></i>
+                    <span>FDT</span>
+            </a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{route ('progresPic')}}">
+                    <i class="fas fa-spinner"></i>
+                    <span>Progres</span>
+            </a>
+        </li>
+    @endcan 
+    @can('user')
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+            <a class="nav-link" href="{{route ('dashboard')}}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+        <a class="nav-link" href="#">  
+            <span>DATA LAPORAN</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item">
+        <a class="nav-link" href="{{route ('laporan')}}">
+                <i class="fas fa-paste"></i>
+                <span>Laporan</span>
+        </a>
+    </li>
+    @endcan
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

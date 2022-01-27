@@ -6,17 +6,12 @@ use App\Rcfa;
 use App\Fdt;
 use PDF;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
 class rcfaController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(function($request, $next) {
-            if(Gate::allows('admin')) return $next($request);
-            abort(403, 'Anda tidak memiliki cukup hak akses');
-        });   
     }
 
     public function index()
@@ -53,8 +48,15 @@ class rcfaController extends Controller
     {
         $fdt = Fdt::all();
         $rcfa = Rcfa::find($rcfa_id);
-        return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa]);
+        $rcfa1 = Rcfa::all();
+        return view('fdt.create', ['fdt' => $fdt, 'rcfa' => $rcfa, 'rcfa1' => $rcfa1]);
     }
+
+    // public function show($nid)
+    // {
+    //     $rcfa = Rcfa::where('nid', '=', $nid)->first();
+    //     return view('halamanPic.rcfa.index', ['rcfa' => $rcfa]);
+    // }
 
     public function edit($rcfa_id)
     {
@@ -93,5 +95,13 @@ class rcfaController extends Controller
         $rcfa = Rcfa::all();
         $pdf = PDF::loadview('rcfa.cetakRcfa',['rcfa'=>$rcfa]);
         return $pdf->stream();
+    }
+
+    public function detailFdt($rcfa_id)
+    {
+        $rcfa = Rcfa::find($rcfa_id);
+        $aset = Asset::all();
+        $fdt = Fdt::where('id_rcfa', '=', $rcfa_id)->get();
+        return view('fdt.detailFdt', ['rcfa' => $rcfa, 'aset' => $aset, 'fdt' => $fdt]);
     }
 }

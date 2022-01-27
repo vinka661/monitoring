@@ -20,7 +20,7 @@
                                             <th>Nama FDT</th>
                                             <th>Nama PIC</th>
                                             <th>Progres</th>
-                                            <th>Tanggal</th>
+                                            <th>Tanggal Progres</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -30,8 +30,8 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->fdt->nama_fdt }}</td>
                                             <td>{{ $data->pic->nama }}</td>
-                                            <td>{{ $data->keterangan }}</td>
-                                            <td>{{ $data->tanggal }}</td>
+                                            <td>{{ $data->nama_progres }}</td>
+                                            <td>{{ $data->tanggal_progres }}</td>
                                           
                                             <td>
                                                 <a href="{{ route('editProgres', $data->progres_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>

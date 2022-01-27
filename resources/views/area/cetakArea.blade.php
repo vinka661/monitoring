@@ -97,7 +97,7 @@
                 @foreach ($area as $key => $data)
                     <tr>
                         <td>{{ ++$key }}</td>
-                        <td>{{ $data->nama }}</td>
+                        <td>{{ $data->nama_area }}</td>
                     </tr>
                 @endforeach
             </tbody>

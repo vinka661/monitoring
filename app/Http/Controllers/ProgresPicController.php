@@ -5,9 +5,19 @@ use App\Progres;
 use App\Fdt;
 use App\Pic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ProgresPicController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('pic')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function index()
     {
         $progresPic = Progres::all();
@@ -25,7 +35,7 @@ class ProgresPicController extends Controller
     public function update(Request $request, $progres_id)
     {
         $progresPic = Progres::find($progres_id);
-        $progresPic->tanggal = $request->tanggal;
+        $progresPic->tanggal_progres = $request->tanggal_progres;
        
         
         $progresPic->save();
