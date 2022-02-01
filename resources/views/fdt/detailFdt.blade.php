@@ -82,8 +82,9 @@
                                 <td>{{ $data->rkap_rjpu}}</td>
                                 <td>{{ $data->upload_kajian}}</td>
                                 <td>
-                                    <a href=""><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                    <a href=""><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                    <a href="{{ route('editFdt', $data->fdt_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                    <a href="{{ route('deleteFdt', $data->fdt_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
+                                    <a href="{{ route('detailProgres', $data->fdt_id) }}"><button  class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Progres</button></a>
                                 </td>
                             </tr>
                             @endforeach

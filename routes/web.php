@@ -70,11 +70,12 @@ Route::get('fdt/edit/{fdt_id}', 'fdtController@edit')->name('editFdt');
 Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
 Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');
 Route::get('fdt/cetakFdt', 'fdtController@cetakFdt')->name('cetakFdt');
+Route::get('fdt/detailFdt/{fdt_id}', 'fdtController@detailProgres')->name('detailProgres');
 // Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
 
 //Progres
 Route::get('progres', 'ProgresController@index')->name('progres');
-Route::get('progres/create', 'ProgresController@create')->name('createProgres');
+Route::get('progres/create/{fdt?}', 'ProgresController@create')->name('createProgres');
 Route::post('progres/store', 'ProgresController@store')->name('storeProgres');
 Route::get('progres/edit/{progres_id}', 'ProgresController@edit')->name('editProgres');
 Route::post('progres/update/{progres_id}', 'ProgresController@update')->name('updateProgres');

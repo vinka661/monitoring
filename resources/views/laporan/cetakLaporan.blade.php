@@ -115,7 +115,7 @@
                 @foreach ($laporan as $key => $data)
                     <tr>
                         <td>{{ ++$key }}</td>
-                        <td>{{ $data->nama }}</td>
+                        <td>{{ $data->nama_area }}</td>
                         <td>{{ $data->asset_id }}</td>
                         <td>{{ $data->rbdid }}</td>
                         <td>{{ $data->equipment }}</td>

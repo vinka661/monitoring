@@ -50,7 +50,7 @@
             <a class="nav-link" href="{{ route('logout') }}" data-toggle="dropdown" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <span class="mr-2 d-none d-lg-inline">{{ Auth::user()->name }}</span>
                 <img class="img-profile rounded-circle"
-                    src="../img/undraw_profile.svg">
+                    src="../../img/undraw_profile.svg">
             </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

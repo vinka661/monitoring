@@ -45,7 +45,6 @@
                                             <td>
                                                 <a href="{{ route('editFdt', $data->fdt_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteFdt', $data->fdt_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
-                                                <a href="{{ route('createProgres') }}"><button  class="btn btn-success btn-sm"><i class="fas fa-plus"></i> Tambah Progres</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

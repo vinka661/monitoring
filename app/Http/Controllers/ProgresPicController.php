@@ -23,6 +23,12 @@ class ProgresPicController extends Controller
         $progresPic = Progres::all();
         return view('halamanPic.progres.index', ['progresPic' => $progresPic]);
     }
+    // public function detailProgres($fdt_id)
+    // {
+    //     $fdt = Fdt::find($fdt_id);
+    //     $progres = Progres::where('id_fdt', '=', $fdt_id)->get();
+    //     return view('progres.detailProgres', ['fdt' => $fdt, 'progres' => $progres]);
+    // }
 
     public function edit($progres_id)
     {

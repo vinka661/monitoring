@@ -26,11 +26,11 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="progres_id"><strong>Progres ID<strong></label><br>
-                    <input type="text" class="form-control" id="progres_id" name="progres_id" value="{{ $progres->progres_id }}">
+                    <input type="text" class="form-control" id="progres_id" name="progres_id" value="{{ $progres->progres_id }}" disabled>
                   </div>
                   <div class="form-group">
                     <label for="fdt"><strong>Nama FDT </strong></label>
-                      <select class="form-control select2bs4" name="fdt" id="fdt" style="width: 100%;" required><br>
+                      <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required><br>
                       @foreach ($fdt as $item)
                         <option value="{{ $item->fdt_id }}" {{ $progres->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
                       @endforeach

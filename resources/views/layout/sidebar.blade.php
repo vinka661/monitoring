@@ -114,6 +114,9 @@
         </li>
         <hr class="sidebar-divider my-0">
         <li class="nav-item">
+            @php
+                $id = str_replace('@mail.com', '', Auth::user()->email);;
+            @endphp
             <a class="nav-link" href="{{ url('pic_rcfa/'. $id) }}">
                     <i class="fas fa-exclamation-triangle"></i>
                     <span>RCFA</span>

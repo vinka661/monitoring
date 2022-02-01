@@ -23,15 +23,8 @@
             <div class="card card-primary card-outline">
                 <form role="form" action="{{ route('storeProgres') }}" method="POST">
                 @csrf
+                <input type="hidden" name="id_fdt" value="{{ $fdt->fdt_id }}">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="fdt"><strong>Nama FDT </strong></label>
-                      <select class="form-control select2bs4" name="fdt" id="fdt" style="width: 100%;" required><br>
-                      @foreach ($fdt as $item)
-                        <option value="{{ $item->fdt_id }}">{{ $item->nama_fdt}}</option>
-                      @endforeach
-                    </select>
-                  </div>
                   <div class="form-group">
                     <label for="pic"><strong>Nama PIC</strong></label>
                     <select class="form-control select2bs4" name="pic" id="pic" style="width: 100%;" required><br>

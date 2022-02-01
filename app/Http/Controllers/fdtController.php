@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Rcfa;
 use App\Fdt;
+use App\Progres;
 use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -58,8 +59,12 @@ class fdtController extends Controller
             'actual_finish' => $request->actual_finish,
             'rkap_rjpu' => $request->rkap_rjpu,
             'upload_kajian' => $upload_kajian,
+
         ]);
-        return redirect('fdt');
+     //return redirect()->back();
+    // return back();
+    //return redirect()->previous();
+    return redirect()->back();
     }
 
     public function edit($fdt_id)
@@ -88,7 +93,7 @@ class fdtController extends Controller
         $fdt->upload_kajian = $upload_kajian;
         
         $fdt->save();
-        return redirect('fdt');
+        return redirect()->back();
     }
     // public function update2(Request $request, $rcfa_id)
     // {
@@ -116,13 +121,21 @@ class fdtController extends Controller
     public function destroy($id)
     {
         $fdt = Fdt::find($id);
+        $rcfa = Rcfa::all();
         $fdt->delete();
-        return redirect('fdt');
+        return redirect()->back();
     }
 
     public function cetakFdt(){
         $fdt = Fdt::all();
         $pdf = PDF::loadview('fdt.cetakFdt',['fdt'=>$fdt]);
         return $pdf->stream();
+    }
+
+    public function detailProgres($fdt_id)
+    {
+        $fdt = Fdt::find($fdt_id);
+        $progres = Progres::where('id_fdt', '=', $fdt_id)->get();
+        return view('progres.detailProgres', ['fdt' => $fdt, 'progres' => $progres]);
     }
 }

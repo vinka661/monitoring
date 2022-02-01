@@ -104,4 +104,5 @@ class rcfaController extends Controller
         $fdt = Fdt::where('id_rcfa', '=', $rcfa_id)->get();
         return view('fdt.detailFdt', ['rcfa' => $rcfa, 'aset' => $aset, 'fdt' => $fdt]);
     }
+    
 }
