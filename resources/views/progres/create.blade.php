@@ -44,8 +44,8 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="tanggal_progres"><strong>Tanggal<strong></label><br>
-                      <input type="date" class="form-control" required="required" name="tanggal_progres" id="datepicker" placeholder="Masukkan Tanggal Progres">
+                    <label for="tanggal_target"><strong>Tanggal Target<strong></label><br>
+                      <input type="date" class="form-control" required="required" name="tanggal_target" id="datepicker" placeholder="Masukkan Tanggal Target">
                   </div>
                 </div>
                 <!-- /.card-body -->

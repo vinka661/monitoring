@@ -38,6 +38,8 @@ class ProgresController extends Controller
             'id_pic' => $request->pic,
             'tanggal_progres' => $request->tanggal_progres,
             'nama_progres' => $request->nama_progres,
+            'ket_progres' => $request->ket_progres,
+            'tanggal_target' => $request->tanggal_target,
         ]);
         return redirect()->back();
     }
@@ -57,6 +59,8 @@ class ProgresController extends Controller
         $progres->id_pic = $request->pic;
         $progres->tanggal_progres = $request->tanggal_progres;
         $progres->nama_progres = $request->nama_progres;
+        $progres->ket_progres = $request->ket_progres;
+        $progres->tanggal_target = $request->tanggal_target;
         
         $progres->save();
         return redirect()->back();

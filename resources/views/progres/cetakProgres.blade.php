@@ -93,6 +93,8 @@
                     <th>Nama FDT</th>
                     <th>Nama PIC</th>
                     <th>Progres</th>
+                    <th>Tanggal Target</th>
+                    <th>Keterangan Progres</th>
                     <th>Tanggal Progres</th>
                 </tr>
             </thead>
@@ -103,6 +105,8 @@
                         <td>{{ $data->fdt->nama_fdt }}</td>
                         <td>{{ $data->pic->nama }}</td>
                         <td>{{ $data->nama_progres }}</td>
+                        <td>{{ $data->tanggal_target }}</td>
+                        <td>{{ $data->ket_progres }}</td>
                         <td>{{ $data->tanggal_progres }}</td>
                     </tr>
                 @endforeach
