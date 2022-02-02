@@ -61,6 +61,7 @@ Route::get('rcfa/delete/{rcfa_id}', 'rcfaController@destroy')->name('deleteRcfa'
 Route::get('rcfa/cetakRcfa', 'rcfaController@cetakRcfa')->name('cetakRcfa');
 Route::get('rcfa/detailFdt/{rcfa_id}', 'rcfaController@detailFdt')->name('detailFdt');
 Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
+Route::get('rcfa/upload/{rcfa_id}', 'rcfaController@upload')->name('upload');
 
 //fdt
 Route::get('fdt', 'fdtController@index')->name('fdt');
@@ -95,7 +96,13 @@ Route::get('progresPic', 'ProgresPicController@index')->name('progresPic');
 Route::get('progresPic/edit/{progres_id}', 'ProgresPicController@edit')->name('editProgresPic');
 Route::post('progresPic/update/{progres_id}', 'ProgresPicController@update')->name('updateProgresPic');
 
-//Laporan User
+//Upload file RCFA
+Route::get('upload/create/{rcfa?}', 'uploadController@create')->name('createUpload');
+Route::post('upload/store', 'uploadController@store')->name('storeUpload');
+Route::get('upload/edit/{upload_id}', 'uploadController@edit')->name('editUpload');
+Route::post('upload/update/{upload_id}', 'uploadController@update')->name('updateUpload');
+Route::get('upload/delete/{upload_id}', 'uploadController@destroy')->name('deleteUpload');
+
 //Laporan
 Route::get('laporanUser', 'laporanUserController@index')->name('laporanUser');
 Route::get('laporanUser/cetakLaporan', 'laporanUserController@cetakLaporan')->name('cetakLaporanUser');

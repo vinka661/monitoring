@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Rcfa;
 use App\Fdt;
+use App\Upload;
 use PDF;
 use Illuminate\Http\Request;
 
@@ -103,6 +104,13 @@ class rcfaController extends Controller
         $aset = Asset::all();
         $fdt = Fdt::where('id_rcfa', '=', $rcfa_id)->get();
         return view('fdt.detailFdt', ['rcfa' => $rcfa, 'aset' => $aset, 'fdt' => $fdt]);
+    }
+
+    public function upload($rcfa_id)
+    {
+        $rcfa = Rcfa::find($rcfa_id);
+        $upload = Upload::where('id_rcfa', '=', $rcfa_id)->get();
+        return view('upload.detailUpload', ['rcfa' => $rcfa, 'upload' => $upload]);
     }
     
 }

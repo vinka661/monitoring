@@ -38,6 +38,7 @@
                                                 <a href="{{ route('editRcfa', $data->rcfa_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
                                                 <a href="{{ route('detailFdt', $data->rcfa_id) }}"><button  class="btn btn-success btn-sm"><i class="fas fa-plus"></i> FDT</button></a>
+                                                <a href="{{ route('upload', $data->rcfa_id) }}"><button  class="btn btn-success btn-sm"><i class="fas fa-file"></i> Upload Kajian</button></a>
                                                 <a href="#pesan" data-toggle="modal"><button  class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Detail RCFA</button></a>
                                               </td>
                                         </tr>

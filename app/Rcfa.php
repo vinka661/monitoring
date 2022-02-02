@@ -19,4 +19,9 @@ class Rcfa extends Model
     {
         return $this->hasMany('App\Fdt');
     }
+
+    public function Upload()
+    {
+        return $this->hasMany('App\Upload');
+    }
 }
