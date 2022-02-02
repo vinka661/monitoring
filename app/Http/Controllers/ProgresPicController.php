@@ -42,7 +42,7 @@ class ProgresPicController extends Controller
     {
         $progresPic = Progres::find($progres_id);
         $progresPic->tanggal_progres = $request->tanggal_progres;
-       
+        $progresPic->ket_progres = $request->ket_progres;
         
         $progresPic->save();
         return redirect('progresPic');

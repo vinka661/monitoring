@@ -30,7 +30,7 @@
                   </div>
                   <div class="form-group">
                     <label for="fdt"><strong>Nama FDT </strong></label>
-                      <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required><br>
+                      <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required disabled><br>
                       @foreach ($fdt as $item)
                         <option value="{{ $item->fdt_id }}" {{ $progres->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
                       @endforeach

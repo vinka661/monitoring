@@ -55,7 +55,7 @@ class ProgresController extends Controller
     public function update(Request $request, $progres_id)
     {
         $progres = Progres::find($progres_id);
-        $progres->id_fdt = $request->id_fdt;
+        // $progres->id_fdt = $request->id_fdt;
         $progres->id_pic = $request->pic;
         $progres->tanggal_progres = $request->tanggal_progres;
         $progres->nama_progres = $request->nama_progres;

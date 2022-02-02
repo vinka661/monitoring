@@ -26,7 +26,9 @@
                                                         <th>No</th>
                                                         <th>Nama PIC</th>
                                                         <th>Progres</th>
-                                                        <th>Tanggal</th>
+                                                        <th>Tanggal Target</th>
+                                                        <th>Keterangan Progres</th>
+                                                        <th>Tanggal Progres</th>
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>
@@ -36,8 +38,9 @@
                                                     <td>{{ ++$key }}</td>
                                                     <td>{{ $data->pic->nama }}</td>
                                                     <td>{{ $data->nama_progres }}</td>
+                                                    <td>{{ $data->tanggal_target }}</td>
+                                                    <td>{{ $data->ket_progres }}</td>
                                                     <td>{{ $data->tanggal_progres }}</td>
-                                                  
                                                     <td>
                                                         <a href="{{ route('editProgresPic', $data->progres_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                       </td>

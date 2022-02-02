@@ -45,6 +45,10 @@
                     </select>
                   </div>
                   <div class="form-group">
+                    <label for="ket_progres"><strong>Keterangan Progres<strong></label><br>
+                      <input type="text" class="form-control" required="required" name="ket_progres" id="datepicker"  value="{{ $progresPic->ket_progres }}" >
+                  </div>
+                  <div class="form-group">
                     <label for="tanggal_progres"><strong>Tanggal Progres<strong></label><br>
                       <input type="date" class="form-control" required="required" name="tanggal_progres" id="datepicker"  value="{{ $progresPic->tanggal_progres }}" >
                   </div>
