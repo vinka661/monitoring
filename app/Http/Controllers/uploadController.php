@@ -34,33 +34,29 @@ class uploadController extends Controller
 
     public function store(Request $request)
     {
-        request()->validate([
-            'upload_kajian' => 'required',
-            'upload_kajian.*' => 'mimes:doc,pdf,docx,txt,zip,jpeg,jpg,png'
+       $this->validate($request, [
+                'upload_kajian' => 'required',
+                'upload_kajian.*' => 'mimes:doc,pdf,docx,zip'
         ]);
-        if($request->hasfile('upload_kajian')) { 
+        if($request->hasfile('upload_kajian'))
+         {
             foreach($request->file('upload_kajian') as $upload_kajian)
             {
-                $fileName = time().rand(0, 1000).pathinfo($upload_kajian->getClientOriginalName(), PATHINFO_FILENAME);
-                $fileName = $fileName.'.'.$upload_kajian->getClientOriginalExtension();
-                $upload_kajian->move(public_path(),$fileName);
-                $input['file'] = $upload_kajian;
-                
+                $name = time().'.'.$upload_kajian->extension();
+                $upload_kajian->move(public_path().'/files/', $name);  
+                $data[] = $name;  
             }
-            Upload::create([
-                'id_rcfa' => $request->id_rcfa,
-                'keterangan_kajian' => $request->keterangan_kajian,
-                'upload_kajian' => $upload_kajian,
-    
-            ]);
-        }
-        
-        //     Upload::create([
-        //     'id_rcfa' => $request->id_rcfa,
-        //     'keterangan_kajian' => $request->keterangan_kajian,
-        //     'upload_kajian' => $upload_kajian,
+         }
 
-        // ]);
+         $upload_kajian= new Upload();
+         $upload_kajian->upload_kajian=json_encode($data);
+         $upload_kajian->save();
+         Upload::create([
+                    'id_rcfa' => $request->id_rcfa,
+                    'keterangan_kajian' => $request->keterangan_kajian,
+                    'upload_kajian' => $upload_kajian,
+        
+                ]);
     return redirect()->back();
                    
     }
