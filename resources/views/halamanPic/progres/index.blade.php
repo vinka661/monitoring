@@ -42,7 +42,7 @@
                                                     <td>{{ $data->ket_progres }}</td>
                                                     <td>{{ $data->tanggal_progres }}</td>
                                                     <td>
-                                                        <a href="{{ route('editProgresPic', $data->progres_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                        <a href="{{ route('editProgresPic', $data->progres_id) }}"><button  class="btn btn-danger btn-sm" id="bedit" ><i class="fas fa-edit"></i> Edit</button></a>
                                                       </td>
                                                 </tr>
                                                 @endforeach

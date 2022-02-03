@@ -21,11 +21,9 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-            <form role="form" action="{{ route('updateProgresPic', $progresPic->progres_id) }}" method="POST">
+            <form role="form" action="{{ route('updateProgresPic', $progresPic->progres_id) }}" method="POST" id="formIsian">
                 @csrf
                 <div class="card-body">
-                 
-                  
                   <div class="form-group">
                     <label for="pic"><strong>Nama PIC</strong></label>
                     <select class="form-control select2bs4" name="pic" id="pic" style="width: 100%;" required disabled><br>
@@ -45,8 +43,9 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="ket_progres"><strong>Keterangan Progres<strong></label><br>
-                      <input type="text" class="form-control" required="required" name="ket_progres" id="datepicker"  value="{{ $progresPic->ket_progres }}" >
+                    <label for="ket_progres"><strong>Keterangan Progres<strong></label>
+                    <p>(isi "sudah selesai" jika sudah menyelesaikan progres)</p>
+                    <textarea class="form-control" required="required" name="ket_progres" id="ket_progres"  value="{{ $progresPic->ket_progres }}" >{{ $progresPic->ket_progres }} </textarea>
                   </div>
                   <div class="form-group">
                     <label for="tanggal_progres"><strong>Tanggal Progres<strong></label><br>
@@ -55,8 +54,9 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{route('progresPic')}}" class="btn btn-default">Cancel</a>
+                  <button type="submit" class="btn btn-primary mr-1" id="bupdate">Update</button>
+                  <a href="{{route('progresPic')}}" class="btn btn-secondary mr-1">Cancel</a>
+                  <button type="button" class="btn btn-success" id="bfinish" onclick="myFunction()">Finish</button>
                 </div>
               </form>
             </div>
