@@ -45,7 +45,7 @@ class asetController extends Controller
             'equipment' => $request->equipment,
             'id_area' => $request->area,
         ]);
-        return redirect('aset');
+        return redirect('aset')->with('success','Data Aset berhasil ditambahkan');
     }
 
     public function edit($aset_id)
@@ -63,14 +63,14 @@ class asetController extends Controller
         $aset->equipment = $request->equipment;
         $aset->id_area = $request->area;
         $aset->save();
-        return redirect('aset');
+        return redirect('aset')->with('success','Data Aset berhasil diedit');
     }
 
     public function destroy($id)
     {
         $aset = Asset::find($id);
         $aset->delete();
-        return redirect('aset');
+        return redirect('aset')->with('success','Data Aset berhasil dihapus');
     }
 
     public function cetakAset(){

@@ -51,7 +51,7 @@ class picController extends Controller
             'roles' => $request->level
         ]);
 
-        return redirect('pic')->with('success', 'created successfully.');
+        return redirect('pic')->with('success','Data PIC berhasil ditambahkan');
     }
 
     public function edit($pic_id)
@@ -70,14 +70,14 @@ class picController extends Controller
         $pic->fungsi = $request->fungsi;
         $pic->level = $request->level;
         $pic->save();
-        return redirect('pic');
+        return redirect('pic')->with('success','Data PIC berhasil diedit');
     }
 
     public function destroy($pic_id)
     {
         $pic = Pic::find($pic_id);
         $pic->delete();
-        return redirect('pic');
+        return redirect('pic')->with('success','Data PIC berhasil dihapus');
     }
     
     public function cetakPic(){

@@ -42,7 +42,7 @@ class rcfaController extends Controller
             'berulang_1_th' => $request->berulang_1_th,
             'berulang_3_th' => $request->berulang_3_th,
         ]);
-        return redirect('rcfa');
+        return redirect('rcfa')->with('success','Data RCFA berhasil ditambahkan');
     }
 
     public function editDetail($rcfa_id)
@@ -82,14 +82,14 @@ class rcfaController extends Controller
         $rcfa->berulang_1_th = $request->berulang_1_th;
         $rcfa->berulang_3_th = $request->berulang_3_th;
         $rcfa->save();
-        return redirect('rcfa');
+        return redirect('rcfa')->with('success','Data RCFA berhasil diedit');
     }
 
     public function destroy($id)
     {
         $rcfa = Rcfa::find($id);
         $rcfa->delete();
-        return redirect('rcfa');
+        return redirect('rcfa')->with('success','Data RCFA berhasil dihapus');
     }
 
     public function cetakRcfa(){

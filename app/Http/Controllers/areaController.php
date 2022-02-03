@@ -37,7 +37,7 @@ class areaController extends Controller
         Area::create([
             'nama_area' => $request->nama_area,
         ]);
-        return redirect('area')->with('success', 'created successfully.');
+        return redirect('area')->with('success','Data area berhasil ditambahakan');
     }
     
     public function edit($area_id)
@@ -51,14 +51,14 @@ class areaController extends Controller
         $area = Area::find($area_id);
         $area->nama_area = $request->nama_area;
         $area->save();
-        return redirect('area');
+        return redirect('area')->with('success','Data area berhasil diedit');
     }
 
     public function destroy($area_id)
     {
         $area = Area::find($area_id);
         $area->delete();
-        return redirect('area');
+        return redirect('area')->with('success','Data area berhasil dihapus');
     }
 
     public function cetakArea(){

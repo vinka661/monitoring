@@ -43,9 +43,7 @@ class fdtController extends Controller
 
     public function store(Request $request)
     {
-        if($request->file('upload_kajian')){ 
-		    $upload_kajian = $request->file('upload_kajian')->store('files','public');
-        }
+        
         // $rcfa = Rcfa::find($rcfa_id);
         
         Fdt::create([
@@ -58,13 +56,13 @@ class fdtController extends Controller
             'no_wo' => $request->no_wo,
             'actual_finish' => $request->actual_finish,
             'rkap_rjpu' => $request->rkap_rjpu,
-            'upload_kajian' => $upload_kajian,
+            
 
         ]);
      //return redirect()->back();
     // return back();
     //return redirect()->previous();
-    return redirect()->back();
+    return redirect()->back()->with('success','Data FDT berhasil ditambahkan');
     }
 
     public function edit($fdt_id)
@@ -85,15 +83,10 @@ class fdtController extends Controller
         $fdt->no_wo = $request->no_wo;
         $fdt->actual_finish = $request->actual_finish;
         $fdt->rkap_rjpu = $request->rkap_rjpu;
-        if($fdt->upload_kajian && file_exists(storage_path('app/public/' . $fdt->upload_kajian)))
-        {
-            \Storage::delete('public/'.$fdt->upload_kajian);
-        }
-        $upload_kajian = $request->file('upload_kajian')->store('files', 'public');
-        $fdt->upload_kajian = $upload_kajian;
+        
         
         $fdt->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Data FDT berhasil diedit');
     }
     // public function update2(Request $request, $rcfa_id)
     // {
@@ -123,7 +116,7 @@ class fdtController extends Controller
         $fdt = Fdt::find($id);
         $rcfa = Rcfa::all();
         $fdt->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Data FDT berhasil dihapus');
     }
 
     public function cetakFdt(){

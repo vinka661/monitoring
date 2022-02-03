@@ -25,7 +25,7 @@
                                             <th>No Wo</th>
                                             <th>Actual Finish</th>
                                             <th>RKAP/RJPU</th>
-                                            <th>Upload Kajian</th>
+                                            {{-- <th>Upload Kajian</th> --}}
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -41,7 +41,7 @@
                                             <td>{{ $data->no_wo }}</td>
                                             <td>{{ $data->actual_finish}}</td>
                                             <td>{{ $data->rkap_rjpu}}</td>
-                                            <td>{{ $data->upload_kajian}}</td>
+                                            {{-- <td>{{ $data->upload_kajian}}</td> --}}
                                             <td>
                                                 <a href="{{ route('editFdt', $data->fdt_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteFdt', $data->fdt_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
