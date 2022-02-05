@@ -31,7 +31,7 @@
                   </div>
                   <div class="form-group">
                     <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
-                    <input type="file" class="form-control" required="required" name="upload_kajian[]"  multiple> </br> 
+                    <input type="file" class="form-control" required="required" name="upload_kajian"  > </br> 
                   </div>
                 </div>
                 <!-- /.card-body -->

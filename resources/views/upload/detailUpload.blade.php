@@ -56,7 +56,7 @@
                             <tr>
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $data->keterangan_kajian }}</td>
-                                <td>{{ $data->upload_kajian }}</td>
+                                <td><a href="{{ route('downloadFile', $data->upload_id) }}">{{ $data->upload_kajian }}</a></td>
                                 <td>
                                     <a href="{{ route('editUpload', $data->upload_id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                     <a href="{{ route('deleteUpload', $data->upload_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>

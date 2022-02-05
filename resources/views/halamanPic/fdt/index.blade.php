@@ -7,11 +7,13 @@
                     <div class="card-deck">
                         @foreach ($pic as $key => $data)
                         <div class="card">
-                          <img src="../img/fdt.png" class="card-img-top" alt="..."  width="50" height="200">
+                          <img src="/../img/fdt.png" class="card-img-top" alt="..."  width="50" height="200">
                           <div class="card-body bg-primary text-white">
                             <h5 class="card-title"><b>Nama FDT</b></h5>{{ ++$key }}.{{ $data->nama_fdt }}
                             <p class="card-text">Target : {{ $data->target }}</p>
                           </div>
+                          {{-- url('pic_fdt/'. $data->rcfa_id --}}
+                          {{-- <a href="{{  url('pic_progres/' . $data->id_fdt . '/' . $data->nid ) }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat Progres</a> --}}
                           <a href="{{ route('progresPic') }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat Progres</a>
                         </div>
                         @endforeach

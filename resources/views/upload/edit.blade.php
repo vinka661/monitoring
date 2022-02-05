@@ -38,11 +38,11 @@
                       </div>
                       <div class="form-group">
                         <label for="keterangan_kajian"><strong>Keterangan Kajian<strong></label><br>
-                          <textarea name="keterangan_kajian" id="keterangan_kajian" class="form-control"  value="{{ $upload->keterangan_kajian }}"></textarea>
+                          <textarea name="keterangan_kajian" id="keterangan_kajian" class="form-control"  value="{{ $upload->keterangan_kajian	 }}">{{ $upload->keterangan_kajian	 }}</textarea>
                       </div>
                       <div class="form-group"> 
                         <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
-                        <input type="file" class="form-control" required="required" name="upload_kajian" value="{{ $upload->upload_kajian }}"></br> 
+                        <input type="file" class="form-control"  name="upload_kajian" value="{{ $upload->upload_kajian }}"></br> 
                       </div> 
                     </div>
                     <!-- /.card-body -->

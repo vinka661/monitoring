@@ -17,7 +17,7 @@
                             <h5 class="card-title"><b>Judul Rcfa</b></h5>{{ ++$key }}. {{ $data->keterangan }}
                             <p class="card-text">Tanggal : {{ $data->tanggal }}</p>
                           </div>
-                          <a href="{{ url('pic_fdt/'. $id) }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat FDT</a>
+                          <a href="{{ url('pic_fdt/'. $data->rcfa_id . '/' . $id  ) }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat FDT</a>
                         </div>
                         @endforeach
                     </div>

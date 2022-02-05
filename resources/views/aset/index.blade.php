@@ -34,7 +34,7 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->asset_id }}</td>
-                                            <td>{{ $data->area->nama }}</td>
+                                            <td>{{ $data->id_area}}</td>
                                             <td>{{ $data->rbdid }}</td>
                                             <td>{{ $data->equipment }}</td>
                                             <td>

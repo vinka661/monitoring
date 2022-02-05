@@ -43,8 +43,19 @@ class ProgresPicController extends Controller
         $progresPic = Progres::find($progres_id);
         $progresPic->tanggal_progres = $request->tanggal_progres;
         $progresPic->ket_progres = $request->ket_progres;
-        
+        // $progresPic->status = 2;
         $progresPic->save();
         return redirect('progresPic');
+    }
+
+    public function finish(Request $request, $progres_id)
+    {
+       
+        $progresPic = Progres::find($progres_id);
+        $progresPic->status = 1;
+        $progresPic->status = $request->status;
+        $progresPic->save();
+        $progresPic = Progres::all();
+        return view('halamanPic.progres.index',compact('progresPic'));
     }
 }

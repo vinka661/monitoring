@@ -40,6 +40,7 @@ class ProgresController extends Controller
             'nama_progres' => $request->nama_progres,
             'ket_progres' => $request->ket_progres,
             'tanggal_target' => $request->tanggal_target,
+            'status' => 0,
         ]);
         return redirect()->back();
     }
@@ -61,7 +62,7 @@ class ProgresController extends Controller
         $progres->nama_progres = $request->nama_progres;
         $progres->ket_progres = $request->ket_progres;
         $progres->tanggal_target = $request->tanggal_target;
-        
+        $progres->status = 0;
         $progres->save();
         return redirect()->back();
     }

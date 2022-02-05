@@ -39,8 +39,8 @@ Route::post('pic/update/{pic_id}', 'picController@update')->name('updatePic');
 Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
 Route::get('pic/cetakPic', 'picController@cetakPic')->name('cetakPic');
 Route::get('pic_rcfa/{id}', 'picController@indexRcfa');
-Route::get('pic_fdt/{id}', 'picController@indexFdt');
-Route::get('pic_progres/{id}', 'picController@indexProgres');
+Route::get('pic_fdt/{id}/{pic_id}', 'picController@indexFdt');
+// Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres');
 
 //asset
 Route::get('aset', 'asetController@index')->name('aset');
@@ -94,7 +94,10 @@ Route::get('berandaPic', 'berandaPicController@berandaPic')->name('berandaPic');
 // Route::get('fdtPic', 'fdtPicController@index')->name('fdtPic');
 Route::get('progresPic', 'ProgresPicController@index')->name('progresPic');
 Route::get('progresPic/edit/{progres_id}', 'ProgresPicController@edit')->name('editProgresPic');
+Route::post('progresPic/finish/{progres_id}', 'ProgresPicController@finish')->name('finishPic');
 Route::post('progresPic/update/{progres_id}', 'ProgresPicController@update')->name('updateProgresPic');
+// Route::post('finish', ['as' => 'finish', 'uses' => 'ProgresPicController@finish']);
+
 
 //Upload file RCFA
 Route::get('upload/create/{rcfa?}', 'uploadController@create')->name('createUpload');
@@ -102,6 +105,7 @@ Route::post('upload/store', 'uploadController@store')->name('storeUpload');
 Route::get('upload/edit/{upload_id}', 'uploadController@edit')->name('editUpload');
 Route::post('upload/update/{upload_id}', 'uploadController@update')->name('updateUpload');
 Route::get('upload/delete/{upload_id}', 'uploadController@destroy')->name('deleteUpload');
+Route::get('upload/download/{upload_id}', 'uploadController@download')->name('downloadFile');
 
 //Laporan
 Route::get('laporanUser', 'laporanUserController@index')->name('laporanUser');

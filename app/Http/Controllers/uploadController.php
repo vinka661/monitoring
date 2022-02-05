@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Upload;
 use App\Rcfa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class uploadController extends Controller
 {
@@ -34,30 +35,30 @@ class uploadController extends Controller
 
     public function store(Request $request)
     {
+       $upload_kajian= new Upload();
        $this->validate($request, [
                 'upload_kajian' => 'required',
-                'upload_kajian.*' => 'mimes:doc,pdf,docx,zip'
+                'upload_kajian.*' => 'mimes:doc,pdf,docx,zip,ppt,pptx'
         ]);
         if($request->hasfile('upload_kajian'))
          {
-            foreach($request->file('upload_kajian') as $upload_kajian)
-            {
-                $name = time().'.'.$upload_kajian->extension();
-                $upload_kajian->move(public_path().'/files/', $name);  
-                $data[] = $name;  
-            }
+            $file = $request->file('upload_kajian');
+            $name = $file->getClientOriginalName();
+          
+            $folder = '/public/files/';
+            $path = $folder.$name;
+            $file->storeAs('public/files',$name);
+            $upload_kajian->upload_kajian = $path;
          }
+         $upload_kajian->id_rcfa = $request->id_rcfa;
+         $upload_kajian->keterangan_kajian = $request->keterangan_kajian;
+         
 
-         $upload_kajian= new Upload();
-         $upload_kajian->upload_kajian=json_encode($data);
-         $upload_kajian->save();
-         Upload::create([
-                    'id_rcfa' => $request->id_rcfa,
-                    'keterangan_kajian' => $request->keterangan_kajian,
-                    'upload_kajian' => $upload_kajian,
-        
-                ]);
-    return redirect()->back();
+         
+
+        $upload_kajian->save();
+
+                return redirect()->back();
                    
     }
 
@@ -104,12 +105,23 @@ class uploadController extends Controller
         $upload = Upload::find($upload_id);
         $upload->id_rcfa = $request->id_rcfa;
         $upload->keterangan_kajian = $request->keterangan_kajian;
-        if($upload->upload_kajian && file_exists(storage_path('app/public/' . $upload->upload_kajian)))
+        if($upload->upload_kajian && file_exists(storage_path('/public/files/' . $upload->upload_kajian)))
         {
-            \Storage::delete('public/'.$upload->upload_kajian);
+            \Storage::delete('/public/files/'.$upload->upload_kajian);
         }
-        $upload_kajian = $request->file('upload_kajian')->store('files', 'public');
-        $upload->upload_kajian = $upload_kajian;
+        if($request->hasfile('upload_kajian'))
+         {
+            $file = $request->file('upload_kajian');
+            $name = $file->getClientOriginalName();
+          
+            $folder = '/public/files/';
+            $path = $folder.$name;
+            $file->storeAs('public/files',$name);
+            $upload->upload_kajian = $path;
+         }
+        // $upload_kajian = $request->file('upload_kajian')->store('files', 'public');
+        
+        // $upload->upload_kajian = $upload_kajian;
         
         $upload->save();
         return redirect()->back();
@@ -121,5 +133,12 @@ class uploadController extends Controller
         $rcfa = Rcfa::all();
         $upload->delete();
         return redirect()->back();
+    }
+
+    public function download($id)
+    {
+        $upload = Upload::find($id);
+
+        return Storage::download($upload->upload_kajian);
     }
 }

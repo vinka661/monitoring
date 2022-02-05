@@ -99,21 +99,51 @@ class picController extends Controller
         return view('halamanPic.rcfa.index',compact('pic'));
     }
 
-    public function indexFdt($id)
+    public function indexFdt($id,$pic_id)
     {
-        $pic = DB::table('pics as ps')
-        ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
-        ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
-        ->select('fs.fdt_id as fdt_id', 'fs.nama_fdt', 'fs.target', 'ps.*')
-        ->where('ps.nid',$id)
-        ->distinct()
-        ->get();
+        // SELECT * FROM fdts 
+        // JOIN rcfas on rcfas.rcfa_id= fdts.id_rcfa
+        // JOIN progress on fdts.fdt_id = progress.id_fdt
+        // JOIN pics on progress.id_pic=pics.pic_id
+        // where id_rcfa = 17 AND pics.nid = 'N222';
+$pic = DB::table('fdts as fs')
+->join('rcfas as rf','rf.rcfa_id', '=','fs.id_rcfa')
+->join('progress as gs','fs.fdt_id', '=','gs.id_fdt')
+->join('pics as ps','gs.id_pic', '=','ps.pic_id')
+->where('id_rcfa',$id,) 
+->where('ps.nid',$pic_id)
+->get();
+
+        // $pic = DB::table('pics as ps')
+        // ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+        // ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+        // ->select('fs.fdt_id as fdt_id', 'fs.nama_fdt', 'fs.target', 'ps.*')
+        // ->where('ps.nid',$id)
+        // ->distinct()
+        // ->get();
         return view('halamanPic.fdt.index',compact('pic'));
+        // ambll data dengan parameter id rcfa dan id pic
+        // output fdt
     }
 
     public function indexProgres($id)
     {
-        $pic = DB::table('pics as ps')
+//         $pic = DB::table('pics as ps')
+//         ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+//         ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+//         ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_progres', 'ps.*')
+//         ->where('ps.nid',$pic_id)
+//         ->distinct()
+//         ->get();
+// //         $pic = DB::table('fdts as fs')
+// // ->join('progress as gs','fs.fdt_id', '=','gs.id_fdt')
+// // ->join('pics as ps','gs.id_pic', '=','ps.pic_id')
+// // ->where('fs.fdt_id',$id,) 
+// // ->where('ps.nid',$pic_id)
+// // ->get();
+// // return var_dump($pic);
+//         return view('halamanPic.progres.index',compact('pic'));
+$pic = DB::table('pics as ps')
         ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
         ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
         ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_progres', 'ps.*')
