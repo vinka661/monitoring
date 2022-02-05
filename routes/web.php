@@ -40,7 +40,8 @@ Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
 Route::get('pic/cetakPic', 'picController@cetakPic')->name('cetakPic');
 Route::get('pic_rcfa/{id}', 'picController@indexRcfa');
 Route::get('pic_fdt/{id}/{pic_id}', 'picController@indexFdt');
-Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres');
+// Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres')->name('pic_progres');
+Route::get('pic_progres/{fdt_id}/{pic_id}', 'picController@indexProgres')->name('pic_progres');
 // Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres');
 
 //asset

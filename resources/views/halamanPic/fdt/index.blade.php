@@ -7,7 +7,7 @@
                     <div class="card-deck">
                         @foreach ($pic as $key => $data)
                           @php
-                            $id = str_replace('@mail.com', '', Auth::user()->email);;
+                            $id = str_replace('@mail.com', '', Auth::user()->email);
                           @endphp
                         <div class="card">
                           <img src="/../img/fdt.png" class="card-img-top" alt="..."  width="50" height="200">

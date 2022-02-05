@@ -127,14 +127,14 @@ $pic = DB::table('fdts as fs')
         // output fdt
     }
 
-    public function indexProgres($id, $pic_id)
+    public function indexProgres($fdt_id,$pic_id)
     {
         $progresPic = DB::table('pics as ps')
                 ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
                 ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
                 ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_target', 'gs.ket_progres', 'gs.tanggal_progres', 'ps.*')
-                ->where('id_fdt', $id)
-                ->where('ps.nid',$pic_id)
+                ->where('id_fdt', $fdt_id)
+                ->where('ps.nid', $pic_id)
                 ->distinct()
                 ->get();
                 return view('halamanPic.progres.index',compact('progresPic'));

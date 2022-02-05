@@ -24,7 +24,7 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="keterangan"><strong>Judul</strong></label><br>
+                            <label for="keterangan"><strong>Judul RCFA</strong></label><br>
                             <input type="text" class="form-control" id="keterangan" name="keterangan" value="{{ $rcfa->keterangan }}" disabled>
                         </div>
                         <div class="form-group">

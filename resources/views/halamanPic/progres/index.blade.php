@@ -18,6 +18,11 @@
                                     <div class="card-header py-3">
                                         <h6 class="m-0 font-weight-bold text-primary">Data Progres</h6>
                                     </div>
+                                    @if ($message = Session::get('success'))
+                                        <div class="alert alert-success">
+                                            <p>{{ $message }}</p>
+                                        </div>
+                                    @endif
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -38,23 +38,27 @@ class ProgresPicController extends Controller
         return view('halamanPic.progres.edit',['progresPic' => $progresPic,'fdt' => $fdt, 'pic' => $pic]);
     }
 
-    public function update(Request $request, $progres_id, $pic_id)
+    public function update(Request $request, $progres_id)
     {
         $progresPic = Progres::find($progres_id);
+        $fdt = Fdt::all();
+        $pic = Pic::all();
         $progresPic->tanggal_progres = $request->tanggal_progres;
         $progresPic->ket_progres = $request->ket_progres;
         // $progresPic->status = 2;
         $progresPic->save();
-        return redirect()->back();
+        return redirect()->route('pic_progres', ['fdt_id' => $progresPic->id_fdt, 'pic_id' => $progresPic->pic->nid])->with('success','Data Progres Berhasil Diedit');
     }
 
     public function finish(Request $request, $progres_id)
     {
         $progresPic = Progres::find($progres_id);
+        $fdt = Fdt::all();
+        $pic = Pic::all();
         $progresPic->status = 1;
         $progresPic->status = $request->status;
         $progresPic->save();
-        $progresPic = Progres::all();
-        return view('halamanPic.progres.index',compact('progresPic'));
+        // $progresPic = Progres::all();
+        return redirect()->route('pic_progres', ['fdt_id' => $progresPic->id_fdt, 'pic_id' => $progresPic->pic->nid])->with('success','Data Progres Berhasil Diselesaikan');
     }
 }

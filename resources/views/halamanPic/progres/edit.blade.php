@@ -26,6 +26,14 @@
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group">
+                                            <label for="fdt"><strong>Nama FDT </strong></label>
+                                            <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required disabled><br>
+                                            @foreach ($fdt as $item)
+                                                <option value="{{ $item->fdt_id }}" {{ $progresPic->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="pic"><strong>Nama PIC</strong></label>
                                             <select class="form-control select2bs4" name="pic" id="pic" style="width: 100%;"
                                                 required disabled><br>
@@ -93,7 +101,7 @@
                                     <!-- /.card-body -->
                                     <div class="card-body">  
                                         <button type="submit" class="btn btn-primary mr-1" id="bupdate">Update</button>
-                                        <a href="{{ route('progresPic') }}" class="btn btn-secondary">Cancel</a>
+                                        <a href="{{ url('pic_progres/'. $progresPic->id_fdt . '/' . $progresPic->pic->nid  ) }}" class="btn btn-secondary">Cancel</a>
                                 </form>
                                 <form method="POST" action="{{ route('finishPic', $progresPic->progres_id) }}">
                                     @csrf
