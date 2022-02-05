@@ -48,6 +48,11 @@
             <div class="card-header py-3">
                 <a href="{{ route('createProgres', ['fdt' => $fdt->fdt_id]) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Progres</button></a>
             </div>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

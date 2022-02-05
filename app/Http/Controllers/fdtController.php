@@ -56,13 +56,8 @@ class fdtController extends Controller
             'no_wo' => $request->no_wo,
             'actual_finish' => $request->actual_finish,
             'rkap_rjpu' => $request->rkap_rjpu,
-            
-
         ]);
-     //return redirect()->back();
-    // return back();
-    //return redirect()->previous();
-    return redirect()->back()->with('success','Data FDT berhasil ditambahkan');
+        return redirect()->route('detailFdt', ['rcfa_id' => $request->id_rcfa])->with('success','Data FDT Berhasil Ditambahkan');
     }
 
     public function edit($fdt_id)
@@ -83,10 +78,8 @@ class fdtController extends Controller
         $fdt->no_wo = $request->no_wo;
         $fdt->actual_finish = $request->actual_finish;
         $fdt->rkap_rjpu = $request->rkap_rjpu;
-        
-        
         $fdt->save();
-        return redirect()->back()->with('success','Data FDT berhasil diedit');
+        return redirect()->route('detailFdt', ['rcfa_id' => $request->id_rcfa])->with('success','Data FDT Berhasil Diedit');
     }
     // public function update2(Request $request, $rcfa_id)
     // {
@@ -116,7 +109,7 @@ class fdtController extends Controller
         $fdt = Fdt::find($id);
         $rcfa = Rcfa::all();
         $fdt->delete();
-        return redirect()->back()->with('success','Data FDT berhasil dihapus');
+        return redirect()->route('detailFdt', ['rcfa_id' => $fdt->id_rcfa])->with('success','Data FDT Berhasil Dihapus');
     }
 
     public function cetakFdt(){

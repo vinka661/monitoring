@@ -38,8 +38,13 @@
         <h1 class="h3 mb-2 text-gray-800">Detail Upload</h1>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <a href="{{ route('createUpload', ['rcfa' => $rcfa->rcfa_id]) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Upload Kajian</button></a>
+                <a href="{{ route('createUpload', ['rcfa' => $rcfa->rcfa_id]) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Upload File</button></a>
             </div>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

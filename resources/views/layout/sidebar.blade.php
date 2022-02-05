@@ -75,7 +75,7 @@
                 <span>RCFA</span>
         </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="{{route ('fdt')}}">
                 <i class="fas fa-check-circle"></i>
                 <span>FDT</span>
@@ -86,7 +86,7 @@
                 <i class="fas fa-spinner"></i>
                 <span>Progres</span>
         </a>
-    </li>
+    </li> -->
     <hr class="sidebar-divider my-0">
 
     <li class="nav-item active">
@@ -128,12 +128,15 @@
                     <span>FDT</span>
             </a>
         </li> -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route ('progresPic')}}">
+        <!-- <li class="nav-item">
+            @php
+                $id = str_replace('@mail.com', '', Auth::user()->email);;
+            @endphp
+            <a class="nav-link" href="{{ url('pic_progres/'. $id) }}">
                     <i class="fas fa-spinner"></i>
                     <span>Progres</span>
             </a>
-        </li>
+        </li> -->
     @endcan 
     @can('user')
     <hr class="sidebar-divider my-0">

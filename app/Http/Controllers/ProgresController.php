@@ -42,7 +42,7 @@ class ProgresController extends Controller
             'tanggal_target' => $request->tanggal_target,
             'status' => 0,
         ]);
-        return redirect()->back();
+        return redirect()->route('detailProgres', ['fdt_id' => $request->id_fdt])->with('success','Data Progres Berhasil Ditambahkan');
     }
 
     public function edit($progres_id)
@@ -56,7 +56,7 @@ class ProgresController extends Controller
     public function update(Request $request, $progres_id)
     {
         $progres = Progres::find($progres_id);
-        // $progres->id_fdt = $request->id_fdt;
+        $progres->id_fdt = $request->id_fdt;
         $progres->id_pic = $request->pic;
         $progres->tanggal_progres = $request->tanggal_progres;
         $progres->nama_progres = $request->nama_progres;
@@ -64,14 +64,14 @@ class ProgresController extends Controller
         $progres->tanggal_target = $request->tanggal_target;
         $progres->status = 0;
         $progres->save();
-        return redirect()->back();
+        return redirect()->route('detailProgres', ['fdt_id' => $request->id_fdt])->with('success','Data Progres Berhasil Diedit');
     }
 
     public function destroy($progres_id)
     {
         $progres = Progres::find($progres_id);
         $progres->delete();
-        return redirect()->back();
+        return redirect()->route('detailProgres', ['fdt_id' => $progres->id_fdt])->with('success','Data Progres Berhasil Dihapus');
     }
 
     public function cetakProgres(){

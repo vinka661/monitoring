@@ -37,7 +37,7 @@
                     <label for="nama_progres"><strong>Progres<strong></label><br>
                     <select class="form-control select2bs4" name="nama_progres" id="nama_progres" style="width: 100%;" required></br>
                       <option value="Kajian">Kajian</option>
-                      <option value="Prerencanaan">Prerencanaan</option>
+                      <option value="Perencanaan">Perencanaan</option>
                       <option value="Pengadaan">Pengadaan</option>
                       <option value="Eksekusi">Eksekusi</option>
                       <option value="Finish">Finish</option>
@@ -51,7 +51,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('progres') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('detailProgres', $fdt->fdt_id) }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

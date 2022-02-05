@@ -37,7 +37,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('upload', $rcfa->rcfa_id) }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

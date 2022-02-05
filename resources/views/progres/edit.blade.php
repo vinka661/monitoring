@@ -30,7 +30,7 @@
                   </div>
                   <div class="form-group">
                     <label for="fdt"><strong>Nama FDT </strong></label>
-                      <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;" required disabled><br>
+                      <select class="form-control select2bs4" name="id_fdt" id="id_fdt" style="width: 100%;"><br>
                       @foreach ($fdt as $item)
                         <option value="{{ $item->fdt_id }}" {{ $progres->id_fdt == $item->fdt_id ? 'selected' : '' }}>{{ $item->nama_fdt }}</option>
                       @endforeach
@@ -62,7 +62,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('progres') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('detailProgres', $progres->id_fdt) }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

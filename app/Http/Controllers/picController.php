@@ -112,6 +112,7 @@ $pic = DB::table('fdts as fs')
 ->join('pics as ps','gs.id_pic', '=','ps.pic_id')
 ->where('id_rcfa',$id,) 
 ->where('ps.nid',$pic_id)
+->distinct()
 ->get();
 
         // $pic = DB::table('pics as ps')
@@ -126,30 +127,16 @@ $pic = DB::table('fdts as fs')
         // output fdt
     }
 
-    public function indexProgres($id)
+    public function indexProgres($id, $pic_id)
     {
-//         $pic = DB::table('pics as ps')
-//         ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
-//         ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
-//         ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_progres', 'ps.*')
-//         ->where('ps.nid',$pic_id)
-//         ->distinct()
-//         ->get();
-// //         $pic = DB::table('fdts as fs')
-// // ->join('progress as gs','fs.fdt_id', '=','gs.id_fdt')
-// // ->join('pics as ps','gs.id_pic', '=','ps.pic_id')
-// // ->where('fs.fdt_id',$id,) 
-// // ->where('ps.nid',$pic_id)
-// // ->get();
-// // return var_dump($pic);
-//         return view('halamanPic.progres.index',compact('pic'));
-$pic = DB::table('pics as ps')
-        ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
-        ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
-        ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_progres', 'ps.*')
-        ->where('ps.nid',$id)
-        ->distinct()
-        ->get();
-        return view('halamanPic.progres.index',compact('pic'));
+        $progresPic = DB::table('pics as ps')
+                ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
+                ->join('fdts as fs', 'fs.fdt_id','=','gs.id_fdt')
+                ->select('gs.progres_id as progres_id', 'ps.nama', 'gs.nama_progres', 'gs.tanggal_target', 'gs.ket_progres', 'gs.tanggal_progres', 'ps.*')
+                ->where('id_fdt', $id)
+                ->where('ps.nid',$pic_id)
+                ->distinct()
+                ->get();
+                return view('halamanPic.progres.index',compact('progresPic'));
     }
 }

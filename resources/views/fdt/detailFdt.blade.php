@@ -53,10 +53,10 @@
                 <a href="{{ route('createFdt', ['rcfa' => $rcfa->rcfa_id]) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah FDT</button></a>
             </div>
             @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

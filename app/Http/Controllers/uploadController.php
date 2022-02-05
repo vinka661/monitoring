@@ -52,14 +52,8 @@ class uploadController extends Controller
          }
          $upload_kajian->id_rcfa = $request->id_rcfa;
          $upload_kajian->keterangan_kajian = $request->keterangan_kajian;
-         
-
-         
-
-        $upload_kajian->save();
-
-                return redirect()->back();
-                   
+         $upload_kajian->save();
+        return redirect()->route('upload', ['rcfa_id' => $request->id_rcfa])->with('success','Data Berhasil Ditambahkan');
     }
 
     // public function store(Request $request)
@@ -124,7 +118,7 @@ class uploadController extends Controller
         // $upload->upload_kajian = $upload_kajian;
         
         $upload->save();
-        return redirect()->back();
+        return redirect()->route('upload', ['rcfa_id' => $request->id_rcfa])->with('success','Data Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -132,7 +126,7 @@ class uploadController extends Controller
         $upload = Upload::find($id);
         $rcfa = Rcfa::all();
         $upload->delete();
-        return redirect()->back();
+        return redirect()->route('upload', ['rcfa_id' => $upload->id_rcfa])->with('success','Data Berhasil Dihapus');
     }
 
     public function download($id)

@@ -93,17 +93,13 @@
                                     <!-- /.card-body -->
                                     <div class="card-body">  
                                         <button type="submit" class="btn btn-primary mr-1" id="bupdate">Update</button>
-                                        <a href="{{ route('progresPic') }}" class="btn btn-secondary mr-1 mb-3">Cancel</a>
-                                        {{-- <button type="button" class="btn btn-success" id="bfinish" onclick="myFunction()">Finish</button> --}}
-                                 {{--  </div> --}}
-                                  
+                                        <a href="{{ route('progresPic') }}" class="btn btn-secondary">Cancel</a>
                                 </form>
                                 <form method="POST" action="{{ route('finishPic', $progresPic->progres_id) }}">
                                     @csrf
-
-                                    <input type="text" name="status" id="" value="1" hidden>
-                                    <button type="submit" value="1" class="btn btn-icon btn-danger"><i
-                                            class="fas fa-times"></i> finish </button>
+                                    <input type="text" name="status" id="" value="1" hidden><br>
+                                    <button type="submit" value="1" class="btn btn-icon btn-success"><i class="fas fa-check"></i> Finish </button>
+                                </div>
                                 </form>
                               </div>
                             </div>

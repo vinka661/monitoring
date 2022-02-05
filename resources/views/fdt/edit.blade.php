@@ -68,16 +68,12 @@
                         <label for="rkap_rjpu"><strong>RKAP/RJPU<strong></label><br>
                         <input type="text" class="form-control" id="rkap_rjpu" name="rkap_rjpu" value="{{ $fdt->rkap_rjpu}}">
                       </div>
-                      {{-- <div class="form-group"> 
-                        <label for="upload_kajian"><strong>Upload Kajian</strong></label>                 
-                        <input type="file" class="form-control" required="required" name="upload_kajian" value="{{ $fdt->upload_kajian }}"></br> 
-                      </div>  --}}
                     </div>
                     <!-- /.card-body -->
     
                     <div class="card-footer">
                       <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                      <a href="{{ route('fdt') }}" class="btn btn-default">Cancel</a>
+                      <a href="{{ route('detailFdt', $fdt->id_rcfa) }}" class="btn btn-default">Cancel</a>
                     </div>
                   </form>
             </div>

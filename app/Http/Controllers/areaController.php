@@ -37,7 +37,7 @@ class areaController extends Controller
         Area::create([
             'nama_area' => $request->nama_area,
         ]);
-        return redirect('area')->with('success','Data area berhasil ditambahakan');
+        return redirect('area')->with('success','Data area berhasil ditambahkan');
     }
     
     public function edit($area_id)

@@ -24,7 +24,7 @@ class laporanController extends Controller
                     ->join('fdts', 'fdts.id_rcfa', '=', 'rcfas.rcfa_id')
                     ->join('progress', 'progress.id_fdt', '=', 'fdts.fdt_id')
                     ->join('pics', 'pics.pic_id', '=', 'progress.id_pic')
-        
+                    ->distinct()
                     ->get();
         return view('laporan.index')->with('laporan', $laporan);
     }

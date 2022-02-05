@@ -34,9 +34,12 @@
                                                 </thead>
                                                <tbody>
                                                 @foreach($progresPic as $key => $data)
+                                                    @php
+                                                        $id = str_replace('@mail.com', '', Auth::user()->email);;
+                                                    @endphp
                                                 <tr>
                                                     <td>{{ ++$key }}</td>
-                                                    <td>{{ $data->pic->nama }}</td>
+                                                    <td>{{ $data->nama }}</td>
                                                     <td>{{ $data->nama_progres }}</td>
                                                     <td>{{ $data->tanggal_target }}</td>
                                                     <td>{{ $data->ket_progres }}</td>

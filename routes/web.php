@@ -40,6 +40,7 @@ Route::get('pic/delete/{pic_id}', 'picController@destroy')->name('deletePic');
 Route::get('pic/cetakPic', 'picController@cetakPic')->name('cetakPic');
 Route::get('pic_rcfa/{id}', 'picController@indexRcfa');
 Route::get('pic_fdt/{id}/{pic_id}', 'picController@indexFdt');
+Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres');
 // Route::get('pic_progres/{id}/{pic_id}', 'picController@indexProgres');
 
 //asset
@@ -71,7 +72,7 @@ Route::get('fdt/edit/{fdt_id}', 'fdtController@edit')->name('editFdt');
 Route::post('fdt/update/{fdt_id}', 'fdtController@update')->name('updateFdt');
 Route::get('fdt/delete/{fdt_id}', 'fdtController@destroy')->name('deleteFdt');
 Route::get('fdt/cetakFdt', 'fdtController@cetakFdt')->name('cetakFdt');
-Route::get('fdt/detailFdt/{fdt_id}', 'fdtController@detailProgres')->name('detailProgres');
+Route::get('fdt/detailProgres/{fdt_id}', 'fdtController@detailProgres')->name('detailProgres');
 // Route::get('rcfa/editDetail/{rcfa_id}', 'rcfaController@editDetail')->name('editDetail');
 
 //Progres
