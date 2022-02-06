@@ -32,6 +32,11 @@
                                     </thead>
                                     <tbody>
                                         @foreach($rcfa as $key => $data)
+                                            @php
+                                                $completedFdt = $data->fdt->every(function($fdt){
+                                                    return $fdt->progres->count();
+                                                });
+                                            @endphp
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->aset->asset_id }}</td>
@@ -44,8 +49,12 @@
                                                 <a href="{{ route('deleteRcfa', $data->rcfa_id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-trash"></i> Delete</button></a>
                                                 <a href="{{ route('detailFdt', $data->rcfa_id) }}"><button  class="btn btn-success btn-sm"><i class="fas fa-plus"></i> FDT</button></a>
                                                 <a href="{{ route('upload', $data->rcfa_id) }}"><button  class="btn btn-success btn-sm"><i class="fas fa-file"></i> Upload File</button></a>
-                                                <a href="#pesan" data-toggle="modal"><button  class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Detail RCFA</button></a>
-                                              </td>
+                                                @if($completedFdt)
+                                                    <a href="#pesan" data-toggle="modal"><button  class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Detail RCFA</button></a>
+                                                @else
+                                                    <a href="#pesan" data-toggle="modal"><button  class="btn btn-primary btn-sm" disabled><i class="fas fa-eye"></i> Detail RCFA</button></a>
+                                                @endif
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

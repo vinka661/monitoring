@@ -17,7 +17,7 @@ class Fdt extends Model
 
     public function Progres()
     {
-        return $this->hasMany('App\Progres');
+        return $this->hasMany('App\Progres','id_fdt');
     }
    
 }

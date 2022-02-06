@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Asset;
 use App\Rcfa;
 use App\Fdt;
+use App\Progres;
 use App\Upload;
 use PDF;
 use Illuminate\Http\Request;
@@ -17,7 +18,12 @@ class rcfaController extends Controller
 
     public function index()
     {
-        $rcfa = Rcfa::all();
+        $rcfa = Rcfa::with([
+                    'Fdt',
+                    'Fdt.Progres' => function($q){
+                        $q->where('nama_progres','Finish');
+                    },
+        ])->get();
         return view('rcfa.index', ['rcfa' => $rcfa]);
     }
 

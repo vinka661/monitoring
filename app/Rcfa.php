@@ -17,7 +17,7 @@ class Rcfa extends Model
 
     public function Fdt()
     {
-        return $this->hasMany('App\Fdt');
+        return $this->hasMany('App\Fdt','id_rcfa');
     }
 
     public function Upload()
