@@ -72,6 +72,13 @@ class rcfaController extends Controller
         return view('rcfa.edit', ['rcfa' => $rcfa, 'aset' => $aset]);
     }
 
+    public function editDetaill($rcfa_id)
+    {
+        $rcfa = Rcfa::find($rcfa_id);
+        $aset = Asset::all();
+        return view('rcfa.editDetail', ['rcfa' => $rcfa, 'aset' => $aset]);
+    }
+
     public function update(Request $request, $rcfa_id)
     {
         $rcfa = Rcfa::find($rcfa_id);
@@ -89,6 +96,25 @@ class rcfaController extends Controller
         $rcfa->berulang_3_th = $request->berulang_3_th;
         $rcfa->save();
         return redirect('rcfa')->with('success','Data RCFA berhasil diedit');
+    }
+
+    public function updateDetail(Request $request, $rcfa_id)
+    {
+        $rcfa = Rcfa::find($rcfa_id);
+        // $rcfa->rcfa_id = $request->rcfa_id;
+        // $rcfa->id_asset = $request->aset;
+        // $rcfa->keterangan = $request->keterangan;
+        // $rcfa->tanggal = $request->tanggal;
+        // $rcfa->input = $request->inp;
+        // $rcfa->failure_mode = $request->failure_mode;
+        $rcfa->evaluasi_rekom = $request->evaluasi_rekom;
+        $rcfa->berulang_1_bln = $request->berulang_1_bln;
+        $rcfa->berulang_3_bln = $request->berulang_3_bln;
+        $rcfa->berulang_6_bln = $request->berulang_6_bln;
+        $rcfa->berulang_1_th = $request->berulang_1_th;
+        $rcfa->berulang_3_th = $request->berulang_3_th;
+        $rcfa->save();
+        return redirect('rcfa')->with('success','Data Detil RCFA berhasil Tambahkan');
     }
 
     public function destroy($id)

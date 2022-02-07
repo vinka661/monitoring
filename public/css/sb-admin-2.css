@@ -160,13 +160,13 @@ sup {
 }
 
 a {
-  color: #018591;
+  color: #2391a7;
   text-decoration: none;
-  background-color: #2391a7;
+ 
 }
 
 a:hover {
-  color: #338A94;
+  color: #4e73df;;
   text-decoration: underline;
 }
 
@@ -10310,7 +10310,7 @@ a:focus {
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link {
-  color: #d1d3e2;
+  color: #338A94;
 }
 
 .topbar.navbar-light .navbar-nav .nav-item .nav-link:hover {
