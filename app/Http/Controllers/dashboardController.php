@@ -19,6 +19,7 @@ class dashboardController extends Controller
     
     public function dashboard()
     {
+        $area1 = Area::all();
         $area = Area::get();
         $aset = Asset::get();
         $rcfa = Rcfa::get(); 
@@ -38,6 +39,6 @@ class dashboardController extends Controller
         $finish = DB::table('progress')
             ->where('nama_progres', '=', 'Finish')
             ->count();
-        return view('dashboard.index', compact('kajian','perencanaan','pengadaan','eksekusi','finish','area','aset','rcfa','pic'));
+        return view('dashboard.index', compact('kajian','perencanaan','pengadaan','eksekusi','finish','area','aset','rcfa','pic', 'area1'));
     }
 }

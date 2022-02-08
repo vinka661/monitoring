@@ -106,14 +106,14 @@ class picController extends Controller
         // JOIN progress on fdts.fdt_id = progress.id_fdt
         // JOIN pics on progress.id_pic=pics.pic_id
         // where id_rcfa = 17 AND pics.nid = 'N222';
-$pic = DB::table('fdts as fs')
-->join('rcfas as rf','rf.rcfa_id', '=','fs.id_rcfa')
-->join('progress as gs','fs.fdt_id', '=','gs.id_fdt')
-->join('pics as ps','gs.id_pic', '=','ps.pic_id')
-->where('id_rcfa',$id,) 
-->where('ps.nid',$pic_id)
-->distinct()
-->get();
+        $pic = DB::table('fdts as fs')
+        ->join('rcfas as rf','rf.rcfa_id', '=','fs.id_rcfa')
+        ->join('progress as gs','fs.fdt_id', '=','gs.id_fdt')
+        ->join('pics as ps','gs.id_pic', '=','ps.pic_id')
+        ->where('id_rcfa',$id,) 
+        ->where('ps.nid',$pic_id)
+        ->distinct()
+        ->get();
 
         // $pic = DB::table('pics as ps')
         // ->join('progress as gs', 'gs.id_pic','=','ps.pic_id')
