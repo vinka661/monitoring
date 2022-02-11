@@ -33,8 +33,8 @@
                                         @foreach($aset as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->asset_id }}</td>
-                                            <td>{{ $data->id_area}}</td>
+                                            <td>{{ $data->asset_id}}</td>
+                                            <td>{{ $data->area->nama_area}}</td>
                                             <td>{{ $data->rbdid }}</td>
                                             <td>{{ $data->equipment }}</td>
                                             <td>

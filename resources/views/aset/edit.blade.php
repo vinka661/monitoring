@@ -32,7 +32,7 @@
                             <label for="area"><strong>Area</strong></label>
                             <select class="form-control select2bs4" name="area" id="area" style="width: 100%;">
                               @foreach ($area as $item)
-                                <option value="{{ $item->area_id }}" {{ $aset->id_area == $item->area_id ? 'selected' : '' }}>{{ $item->nama }}</option>
+                                <option value="{{ $item->area_id }}" {{ $aset->id_area == $item->area_id ? 'selected' : '' }}>{{ $item->nama_area }}</option>
                               @endforeach
                             </select>
                           </div>
