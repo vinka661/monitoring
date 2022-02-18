@@ -47,6 +47,7 @@
                       <option value="OEE">OEE</option>
                       <option value="ECP">ECP</option>
                       <option value="Chronic Problem">Chronic Problem</option>
+                      <option value="Fail Freq">Fail Freq</option>
                     </select>
                   </div>
                   <div class="form-group">

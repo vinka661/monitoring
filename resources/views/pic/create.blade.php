@@ -38,7 +38,7 @@
                   </div>
                   <div class="form-group">
                     <label for="bidang"><strong>Bidang<strong></label><br>
-                    <select class="form-control select2bs4" name="bidang" id="bidang" style="width: 100%;" required></br>
+                    <select class="form-control select2bs4" name="bidang" id="bidang" style="width: 100%;"></br>
                       <option value="Operasi">Operasi</option>
                       <option value="Pemeliharaan">Pemeliharaan</option>
                       <option value="ENJ dan QA">ENJ dan QA</option>
@@ -48,7 +48,7 @@
                   </div>
                   <div class="form-group">
                     <label for="fungsi"><strong>Fungsi<strong></label><br>
-                    <select class="form-control select2bs4" name="fungsi" id="fungsi" style="width: 100%;" required></br>
+                    <select class="form-control select2bs4" name="fungsi" id="fungsi" style="width: 100%;"></br>
                       <option value="MMK">MMK</option>
                       <option value="CBM">CBM</option>
                       <option value="MRK">MRK</option>

@@ -42,7 +42,7 @@
                   </div>
                   <div class="form-group">
                     <label for="target"><strong>Target<strong></label><br>
-                      <input type="date" class="form-control" required="required" name="target" id="datepicker" placeholder="Masukkan Tanggal Target">
+                      <input type="date" class="form-control" name="target" id="datepicker" placeholder="Masukkan Tanggal Target">
                   </div>
                   <div class="form-group">
                     <label for="no_wo"><strong>No Wo<strong></label><br>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="form-group">
                     <label for="actual_finish"><strong>Actual Finish<strong></label><br>
-                      <input type="date" class="form-control" required="required" name="actual_finish" id="datepicker" placeholder="Masukkan Tanggal Actual Finish">
+                      <input type="date" class="form-control" name="actual_finish" id="datepicker" placeholder="Masukkan Tanggal Actual Finish">
                   </div>
                   <div class="form-group">
                     <label for="rkap_rjpu"><strong>RKAP/RJPU<strong></label><br>
