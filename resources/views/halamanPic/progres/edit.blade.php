@@ -51,9 +51,9 @@
                                                 <option value="Kajian"
                                                     {{ $progresPic->nama_progres == 'Kajian' ? 'selected' : '' }}>Kajian
                                                 </option>
-                                                <option value="Prerencanaan"
-                                                    {{ $progresPic->nama_progres == 'Prerencanaan' ? 'selected' : '' }}>
-                                                    Prerencanaan</option>
+                                                <option value="Perencanaan"
+                                                    {{ $progresPic->nama_progres == 'Perencanaan' ? 'selected' : '' }}>
+                                                    Perencanaan</option>
                                                 <option value="Pengadaan"
                                                     {{ $progresPic->nama_progres == 'Pengadaan' ? 'selected' : '' }}>
                                                     Pengadaan</option>

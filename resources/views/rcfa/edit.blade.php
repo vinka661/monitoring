@@ -52,6 +52,7 @@
                           <option value="ECP" {{ $rcfa->input == 'ECP' ? 'selected' : '' }}>ECP</option>
                           <option value="Chronic Problem" {{ $rcfa->input == 'Chronic Problem' ? 'selected' : '' }}>Chronic Problem</option>
                           <option value="Fail Freq" {{ $rcfa->input == 'Fail Freq' ? 'selected' : '' }}>Fail Freq</option>
+                          <option value="AUX PWR" {{ $rcfa->input == 'AUX PWR' ? 'selected' : '' }}>AUX PWR</option>
                         </select>
                       </div>
                       <div class="form-group">

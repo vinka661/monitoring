@@ -28,7 +28,7 @@ class dashboardController extends Controller
             ->where('nama_progres', '=', 'Kajian')
             ->count();
         $perencanaan = DB::table('progress')
-            ->where('nama_progres', '=', 'Prerencanaan')
+            ->where('nama_progres', '=', 'Perencanaan')
             ->count();
         $pengadaan = DB::table('progress')
             ->where('nama_progres', '=', 'Pengadaan')

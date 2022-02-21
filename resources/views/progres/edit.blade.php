@@ -48,7 +48,7 @@
                     <label for="nama_progres"><strong>Progres<strong></label><br>
                     <select class="form-control select2bs4" name="nama_progres" id="nama_progres" style="width: 100%;" required></br>
                       <option value="Kajian"        {{ $progres->nama_progres == 'Kajian' ? 'selected' : '' }}>Kajian</option>
-                      <option value="Prerencanaan"  {{ $progres->nama_progres == 'Prerencanaan' ? 'selected' : '' }}>Prerencanaan</option>
+                      <option value="Perencanaan"  {{ $progres->nama_progres == 'Perencanaan' ? 'selected' : '' }}>Perencanaan</option>
                       <option value="Pengadaan"     {{ $progres->nama_progres == 'Pengadaan' ? 'selected' : '' }}>Pengadaan</option>
                       <option value="Eksekusi"      {{ $progres->nama_progres == 'Eksekusi' ? 'selected' : '' }}>Eksekusi</option>
                       <option value="Finish"        {{ $progres->nama_progres == 'Finish' ? 'selected' : '' }}>Finish</option>

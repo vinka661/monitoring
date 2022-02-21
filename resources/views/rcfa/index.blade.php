@@ -22,7 +22,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Asset Number</th>
+                                            <th>Equipment</th>
                                             <th>Judul RCFA</th>
                                             <th>Tanggal</th>
                                             <th>Input</th>
@@ -39,7 +39,7 @@
                                             @endphp
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->aset->asset_id }}</td>
+                                            <td>{{ $data->aset->equipment }}</td>
                                             <td>{{ $data->keterangan }}</td>
                                             <td>{{ $data->tanggal }}</td>
                                             <td>{{ $data->input }}</td>

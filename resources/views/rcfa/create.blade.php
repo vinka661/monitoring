@@ -48,11 +48,12 @@
                       <option value="ECP">ECP</option>
                       <option value="Chronic Problem">Chronic Problem</option>
                       <option value="Fail Freq">Fail Freq</option>
+                      <option value="AUX PWR">AUX PWR</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="failure_mode"><strong>Failure Mode<strong></label><br>
-                    <input type="text" class="form-control" id="failure_mode" name="failure_mode" placeholder="Masukkan Failure Mode" required>
+                    <input type="text" class="form-control" id="failure_mode" name="failure_mode" placeholder="Masukkan Failure Mode" >
                   </div>
                   <!-- <div class="form-group">
                     <label for="evaluasi_rekom"><strong>Evaluasi Rekomendasi<strong></label><br>
