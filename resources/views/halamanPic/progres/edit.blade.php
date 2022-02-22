@@ -85,14 +85,14 @@
                                         @if ($progresPic->status == 1)
                                             <div class="form-group">
                                                 <label for="tanggal_progres"><strong>Tanggal Progres<strong></label><br>
-                                                <input type="date" class="form-control" disabled required="required"
+                                                <input type="date" class="form-control" disabled 
                                                     name="tanggal_progres" id="datepicker"
                                                     value="{{ $progresPic->tanggal_progres }}">
                                             </div>
                                         @else
                                             <div class="form-group">
                                                 <label for="tanggal_progres"><strong>Tanggal Progres<strong></label><br>
-                                                <input type="date" class="form-control" required="required"
+                                                <input type="date" class="form-control" 
                                                     name="tanggal_progres" id="datepicker"
                                                     value="{{ $progresPic->tanggal_progres }}">
                                             </div>
